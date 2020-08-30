@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://padawanr0k.github.io/react-gh-pages/</loc> <lastmod>2018-09-25</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/gitUppercase/</loc> <lastmod>2018-08-05</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/inputMagnified/</loc> <lastmod>2018-08-05</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/react with daum-map.1/</loc> <lastmod>2018-07-15</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/html tags/</loc> <lastmod>2018-07-01</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/Idempotent/</loc> <lastmod>2018-06-23</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/date/</loc> <lastmod>2018-06-15</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/gh-pages/</loc> <lastmod>2018-05-15</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/tiling/</loc> <lastmod>2018-05-14</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/change124/</loc> <lastmod>2018-05-08</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/setAlign/</loc> <lastmod>2018-05-05</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/hopscotch/</loc> <lastmod>2018-03-20</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/chooseCity/</loc> <lastmod>2018-03-13</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/expressions/</loc> <lastmod>2018-03-10</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/caesar/</loc> <lastmod>2018-03-07</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/nextBignumber/</loc> <lastmod>2018-03-07</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/noOvertime/</loc> <lastmod>2018-03-06</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/bestSet/</loc> <lastmod>2018-03-04</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/productMatix/</loc> <lastmod>2018-03-04</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/AI_pusblisher/</loc> <lastmod>2018-02-27</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/longest_Palindrom/</loc> <lastmod>2018-02-27</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/deployError/</loc> <lastmod>2018-02-23</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/isPair/</loc> <lastmod>2018-02-22</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/adder/</loc> <lastmod>2018-02-12</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/Palindrom/</loc> <lastmod>2018-02-12</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/MinimumValue/</loc> <lastmod>2018-02-07</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/fds-quiz-02/</loc> <lastmod>2018-02-06</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/prototype/</loc> <lastmod>2018-02-01</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/fds-quiz-01/</loc> <lastmod>2018-01-31</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/Collatz/</loc> <lastmod>2018-01-29</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/css_align/</loc> <lastmod>2018-01-22</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/tag-post-example/</loc> <lastmod>1991-03-24</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/search/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
