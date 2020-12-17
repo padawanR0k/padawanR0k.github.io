@@ -27,32 +27,32 @@ console.log (usName.setName); // f(){ return 'Kim' }
 
 1. 함수를 선언하면 생성자함수가 생기며, 생성된 함수에안에 prototype프로퍼티가 존재하고, 그와 별개로 프로토타입객체가 생긴다.
 
-<img src="https://padawanr0k.github.io/img/prototype01.png" width="500" style="display:block;margin:50px auto;">
+<img src="./prototype01.png" width="500" style="display:block;margin:50px auto;">
 
 
 2. 프로토타입객체 안에는 constructor속성이 있으며 프로토타입객체가 어떤 객체에서 상속되었는지 가르키고있다.
-<img src="https://padawanr0k.github.io/img/prototype03.png" width="300" style="display:block;margin:50px auto;">
+<img src="./prototype03.png" width="300" style="display:block;margin:50px auto;">
 
 3. prototype 프로퍼티는 선언된 함수에 있다.
 
 
 4. prototype 프로퍼티는 그 함수의 프로토타입객체를 가르킨다.
-<img src="https://padawanr0k.github.io/img/prototype02.png" width="300" style="display:block;margin:50px auto;">
+<img src="./prototype02.png" width="300" style="display:block;margin:50px auto;">
 
-<img src="https://padawanr0k.github.io/img/prototype04.png" width="500" style="display:block;margin:50px auto;">
+<img src="./prototype04.png" width="500" style="display:block;margin:50px auto;">
 
 5. 이때 새로운 인스턴스를 생성하면 그 인스턴스에  \__proto__ 속성이 생긴다.
 
-<img src="https://padawanr0k.github.io/img/prototype05.png" width="200" style="display:block;margin:50px auto;">
+<img src="./prototype05.png" width="200" style="display:block;margin:50px auto;">
 
 6. \__proto__ 속성은 생성자 함수를 가르키지 않고 프로토타입객체를 가르킨다. 4번처럼.
-<img src="https://padawanr0k.github.io/img/prototype06.png" width="500" style="display:block;margin:50px auto;">
+<img src="./prototype06.png" width="500" style="display:block;margin:50px auto;">
 
 7. 그래서 인스턴스는 생성자 함수와 똑같이 프로토타입객체를 바라 보게된다. (같은 address를 참조하게 된다.)
-<img src="https://padawanr0k.github.io/img/prototype07.png" width="250" style="display:block;margin:50px auto;">
+<img src="./prototype07.png" width="250" style="display:block;margin:50px auto;">
 
 8. 그러므로 프로토타입객체의 속성을 변경하면 변경사항이 인스턴스의 속성에도 적용된다. (참조에 의한 호출로 동작한다.)
-<img src="https://padawanr0k.github.io/img/prototype08.png" width="400" style="display:block;margin:50px auto;">
+<img src="./prototype08.png" width="400" style="display:block;margin:50px auto;">
 ```js
 Person.prototype.setName = function(){
   return "Kim"
