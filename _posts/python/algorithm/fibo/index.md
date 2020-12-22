@@ -54,6 +54,9 @@ def fibo4(n) -> int:
 ```
 고전 방식으로 푸는방법이다. 튜플언패킹을 사용해서 값을 다음 값을 next에 대입함과 동시에 기존값들도 다시 대입하고있다. (변수를 `swap`했다.)
 
+<iframe height="400px" width="100%" src="https://repl.it/@padawanR0k/fibo?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 ## ref
 - 고전 컴퓨터 알고리즘 인 파이썬
 - [function caching](https://ddanggle.gitbooks.io/interpy-kr/content/ch23-Function-caching.html)
+
