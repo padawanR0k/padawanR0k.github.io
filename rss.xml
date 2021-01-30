@@ -1,4 +1,280 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[R0k's l0g | Feed]]></title><description><![CDATA[록의 기록들]]></description><link>https://padawanr0k.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 30 Jan 2021 10:04:42 GMT</lastBuildDate><item><title><![CDATA[웹팩을 쓰는 이유와 사용법 정리]]></title><description><![CDATA[웹팩이란? 프론트엔드 개발시 여러 파일을 하나 혹은 N개의 결과물로 만들기 위한 모듈 번들러. 비슷한 도구로는 parcel, snowpack 등이 있다. 웹팩에서의 모듈 하나의 역할을 수행할 수 있는 단위 프로젝트를 구성하는 모든 자원 (html, …]]></description><link>https://padawanr0k.github.io/webpack/</link><guid isPermaLink="false">https://padawanr0k.github.io/webpack/</guid><pubDate>Mon, 18 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;웹팩이란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9B%B9%ED%8C%A9%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;웹팩이란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;웹팩이란?&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[R0k's l0g | Feed]]></title><description><![CDATA[록의 기록들]]></description><link>https://padawanr0k.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 30 Jan 2021 10:08:28 GMT</lastBuildDate><item><title><![CDATA[mobx 6 정리 - 01]]></title><description><![CDATA[리액트에서 사용하는 경우에 초점을 맞춰 작성 mobx 란? 클라이언트 사이드에서 사용하는 상태관리 라이브러리 state를 컴포넌트와 별개로 관리가능 redux는 flux아키텍쳐를 리액트에서만 사용할수있게 구현한것이다. mobx는 이와 다르게 UI 프…]]></description><link>https://padawanr0k.github.io/01/</link><guid isPermaLink="false">https://padawanr0k.github.io/01/</guid><pubDate>Sat, 30 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;리액트에서 사용하는 경우에 초점을 맞춰 작성&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;mobx-란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#mobx-%EB%9E%80&quot; aria-label=&quot;mobx 란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;mobx 란?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;클라이언트 사이드에서 사용하는 상태관리 라이브러리&lt;/li&gt;
+&lt;li&gt;state를 컴포넌트와 별개로 관리가능&lt;/li&gt;
+&lt;li&gt;redux는 flux아키텍쳐를 리액트에서만 사용할수있게 구현한것이다. mobx는 이와 다르게 UI 프레임워크에 관계없이 모든곳에서 사용가능한 상태관리 라이브러리다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;컴포넌트는 다수의 mobx store에 접근가능하며, mobx의 데이터는 구독가능한 observable 형태로 관리된다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;5버전에서는 데코레이터(&lt;code class=&quot;language-text&quot;&gt;@&lt;/code&gt;)문법을 지원했었지만, 최신 문법이 아니였다. 이 때문에 프로젝트에 적용하려면 부가적인 환경설정이 필요했다. (구버전 브라우저 지원)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;mobx-core&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#mobx-core&quot; aria-label=&quot;mobx core permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;MobX core&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;핵심 개념들은 다음과 같다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;observable&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;구독가능한 형태로 상태를 관리할수 있게한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;action&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;구독가능해진 상태를 수정하는 메서드임을 나타낸다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;computed&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;상태와 캐시로부터 새로운 값을 가지는 게터를 반환한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mobx6 에서는 객체를 구독가능하게 만드는 함수를 제공하는데, 이는 다음과 같다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;makeObservable&lt;/li&gt;
+&lt;li&gt;makeAutoObservable&lt;/li&gt;
+&lt;li&gt;observable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;주로 class 문법과 같이 쓰인다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;code-classlanguage-textmakeobservabletarget-annotations-optionscode&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#code-classlanguage-textmakeobservabletarget-annotations-optionscode&quot; aria-label=&quot;code classlanguage textmakeobservabletarget annotations optionscode permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;code class=&quot;language-text&quot;&gt;makeObservable(target, annotations?, options?)&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;target&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Object 타입을 가진 모든 변수가 올 수 있다. class의 constructor에서 this를 넘겨줌으로써 class를 observable하게 만든다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;annotations&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mobx5에서 데코레이터 문법으로 처리했던것을 객체로 표현하여 전달한다.&lt;/li&gt;
+&lt;li&gt;key에는 method명이 value에는 이 method가 어떻게 사용될것인지를 mobx 함수로 전달한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;options&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;makeObservable, makeAutoObservable, observable 에서 모두 사용되는 매개변수이다. 디버깅을 더 쉽게하거나 proxy 자동생성을 비활성화하는 등에 사용된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;class에서-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#class%EC%97%90%EC%84%9C-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;class에서 사용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;class에서 사용&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; makeObservable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; observable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; action &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;mobx&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Doubler&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    value
+
+    &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;token comment&quot;&gt;// 클래스 내부에는 value라는 프로퍼티가 있고, 이값을 구독가능하게 만듦&lt;/span&gt;
+
+        &lt;span class=&quot;token function&quot;&gt;makeObservable&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            value&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; observable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+
+						&lt;span class=&quot;token comment&quot;&gt;// double은 값을 변경하진 않는다. 하지만 값에 특정 computing을 하여 새로운 값을 만들어내고 그 값을 변수처럼 사용하게 해준다. -&gt; computed를 매핑해줌&lt;/span&gt;
+            double&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; computed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+
+						&lt;span class=&quot;token comment&quot;&gt;// increment 메서드는 value값을 변화 시킨다. -&gt; action 매핑해줌&lt;/span&gt;
+            increment&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; action
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; value
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token function&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;중첩된-class에서-둘다-mobx-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%A4%91%EC%B2%A9%EB%90%9C-class%EC%97%90%EC%84%9C-%EB%91%98%EB%8B%A4-mobx-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;중첩된 class에서 둘다 mobx 사용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;중첩된 class에서 둘다 mobx 사용&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; makeObservable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; observable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; action &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;mobx&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// not overridable&lt;/span&gt;
+    observable1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+
+    &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;makeObservable&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            observable1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; observable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            computed1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; computed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            action1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; action&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            arrowAction1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; action
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// overridable&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;computed1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;observable &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// overridable&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;action1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;observable&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// not overridable&lt;/span&gt;
+    &lt;span class=&quot;token function-variable function&quot;&gt;arrowAction1&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// workaround - not annotated - overridable&lt;/span&gt;
+    overridableArrowAction1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&quot;token comment&quot;&gt;// 부모를 확장했기때문에, 기존 메서드를 상속받는다.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Child&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// new&lt;/span&gt;
+    observable2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+
+    &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;makeObservable&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+						&lt;span class=&quot;token comment&quot;&gt;// 상속받았지만, 이 자식 클래스에서 새로 선언하고 싶다! -&gt; override 매핑하고, 이 클래스에서 다시 선언&lt;/span&gt;
+            action1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; override&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            computed1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; override&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token comment&quot;&gt;// new fields&lt;/span&gt;
+            observable2&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; observable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            computed2&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; computed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            action2&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; action&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            arrowAction2&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; action
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// overrides&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;computed1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;computed1 &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// overrides&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;action1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;action1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// workaround - not annotated - overrides&lt;/span&gt;
+    overridableArrowAction1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// new&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;computed2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;computed1 &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// new&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;action2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;action1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// new&lt;/span&gt;
+    &lt;span class=&quot;token function-variable function&quot;&gt;arrowAction2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;code-classlanguage-textmakeautoobservabletarget-overrides-optionscode&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#code-classlanguage-textmakeautoobservabletarget-overrides-optionscode&quot; aria-label=&quot;code classlanguage textmakeautoobservabletarget overrides optionscode permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;code class=&quot;language-text&quot;&gt;makeAutoObservable(target, overrides?, options?)&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;target&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Object 타입을 가진 모든 변수가 올 수 있다. class의 constructor에서 this를 넘겨줌으로써 class를 observable하게 만든다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;overrides&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;자동으로 추론해주는 설정대신 직접 오버라이드를 원할 경우 사용한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;makeObservable과 비슷하게 프로퍼티들을 구독가능한 객체로 만든다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;makeObservable에서 일일이 매핑해줬던 부분을 알아서 추론하여 매핑 해준다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;추론 규칙&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;멤버 프로퍼티가 포함된 메서드는 모두 autoAction 어노테이션이 달림&lt;/li&gt;
+&lt;li&gt;모든 getter들은 computed 어노테이션이 달림&lt;/li&gt;
+&lt;li&gt;모든 다른 프로퍼티에는 observable 어노테이션이 달림&lt;/li&gt;
+&lt;li&gt;(해석불가..)Any (inherited) member that is a generator function will be annotated with flow. (Note that generators functions are not detectable in some transpiler configurations, if flow doesn&apos;t work as expected, make sure to specify flow explicitly.)&lt;/li&gt;
+&lt;li&gt;overrides 인자에서 false로 매핑된 변수는 아무 어노테이션이 달리지않음 -&gt; 변경불가 -&gt; readonly 프로퍼티인 경우에 사용할 것&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;makeAutoObservable를 사용한 클래스는 다른 클래스를 상속받거나 자식 클래스를 가질 수 없다.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;factory-function에서-mobx-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#factory-function%EC%97%90%EC%84%9C-mobx-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;factory function에서 mobx 사용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;factory function에서 mobx 사용&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://ui.toast.com/weekly-pick/ko_20160905&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;factory function?&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; makeAutoObservable &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;mobx&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;// 다음과 같이 class문법을 사용하지 않아도 mobx를 사용할 수 있다.
+function createDoubler(value) {
+return makeAutoObservable({
+value,
+get double() {
+return this.value * 2
+},
+increment() {
+this.value++
+}
+})
+}&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;### `observable(source, overrides?, options?)`
+- collection 타입 오브젝트를 구독가능하게 만들어준다.
+- 반환되는 객체는 [프록시](https://ko.javascript.info/proxy)된 객체이다. 이는 추가로 들어오는 데이터들도 observable하게 만들어준다. (새로들어온 데이터도 수정하려고하면 mobx가 구현한 observerble proxy를 거친다는 뜻?)
+- source
+	- 클론될 오브젝트이며, 모든 프로퍼티들은 makeAutoObservable 처럼 자동으로 추론되어 어노테이션된다.
+- overrides
+	- makeAutoObservable와 동일하다.
+
+#### 일반 객체에서 mobx 사용
+```js
+import { observable } from &amp;quot;mobx&amp;quot;
+
+
+// object, array, map, set에서도 사용가능하다. 결국 조상이 object여서 가능한건가?
+const todosById = observable({
+    &amp;quot;TODO-123&amp;quot;: {
+        title: &amp;quot;find a decent task management system&amp;quot;,
+        done: false
+    }
+})
+
+todosById[&amp;quot;TODO-456&amp;quot;] = {
+    title: &amp;quot;close all tickets older than two weeks&amp;quot;,
+    done: true
+}
+
+const tags = observable([&amp;quot;high prio&amp;quot;, &amp;quot;medium prio&amp;quot;, &amp;quot;low prio&amp;quot;])
+tags.push(&amp;quot;prio: for fun&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;observable을-다시-바닐라-javascript-컬렉션으로-변환&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#observable%EC%9D%84-%EB%8B%A4%EC%8B%9C-%EB%B0%94%EB%8B%90%EB%9D%BC-javascript-%EC%BB%AC%EB%A0%89%EC%85%98%EC%9C%BC%EB%A1%9C-%EB%B3%80%ED%99%98&quot; aria-label=&quot;observable을 다시 바닐라 javascript 컬렉션으로 변환 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Observable을 다시 바닐라 JavaScript 컬렉션으로 변환&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;api로 값을 보내거나, js기본 데이터형태가 필요할 때&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 객체면 ...연산자로 복사&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; plainObject &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;observableObject &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;// 배열이면 ...slice() 연산자로 복사
+const plainArray = observableArray.slice()&lt;/p&gt;
+&lt;p&gt;// Map이면 새로운 Map을 다시 생성
+const plainMap = new Map(observableMap)&lt;/p&gt;
+&lt;p&gt;// class일 경우는 toJSON() 메서드를 직접 구현하는것이 좋다고한다.
+const plainClass = new Example(observableMap).toJSON())&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;## 참고
+- [공식문서](https://mobx.js.org/observable-state.html)
+- [https://jaeheon.kr/174](https://jaeheon.kr/174)
+- [자바스크립트에서 팩토리 함수란 무엇인가?](https://ui.toast.com/weekly-pick/ko_20160905)
+- [Proxy와 Reflect](https://ko.javascript.info/proxy)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[웹팩을 쓰는 이유와 사용법 정리]]></title><description><![CDATA[웹팩이란? 프론트엔드 개발시 여러 파일을 하나 혹은 N개의 결과물로 만들기 위한 모듈 번들러. 비슷한 도구로는 parcel, snowpack 등이 있다. 웹팩에서의 모듈 하나의 역할을 수행할 수 있는 단위 프로젝트를 구성하는 모든 자원 (html, …]]></description><link>https://padawanr0k.github.io/webpack/</link><guid isPermaLink="false">https://padawanr0k.github.io/webpack/</guid><pubDate>Mon, 18 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;웹팩이란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9B%B9%ED%8C%A9%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;웹팩이란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;웹팩이란?&lt;/h1&gt;
 &lt;p&gt;프론트엔드 개발시 여러 파일을 하나 혹은 N개의 결과물로 만들기 위한 모듈 번들러. 비슷한 도구로는 parcel, snowpack 등이 있다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -538,283 +814,7 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
 &lt;p&gt;본 내용은 &lt;a href=&quot;https://www.inflearn.com/course/%ED%94%84%EB%9F%B0%ED%8A%B8%EC%97%94%EB%93%9C-%EC%9B%B9%ED%8C%A9&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;프론트엔드 개발자를 위한 웹팩&lt;/a&gt; 강의을 보고 정리한 내용입니다.&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[mobx 6 정리 - 01]]></title><description><![CDATA[리액트에서 사용하는 경우에 초점을 맞춰 작성 mobx 란? 클라이언트 사이드에서 사용하는 상태관리 라이브러리 state를 컴포넌트와 별개로 관리가능 redux는 flux아키텍쳐를 리액트에서만 사용할수있게 구현한것이다. mobx는 이와 다르게 UI 프…]]></description><link>https://padawanr0k.github.io/01/</link><guid isPermaLink="false">https://padawanr0k.github.io/01/</guid><pubDate>Sun, 03 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
-&lt;p&gt;리액트에서 사용하는 경우에 초점을 맞춰 작성&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;mobx-란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#mobx-%EB%9E%80&quot; aria-label=&quot;mobx 란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;mobx 란?&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;클라이언트 사이드에서 사용하는 상태관리 라이브러리&lt;/li&gt;
-&lt;li&gt;state를 컴포넌트와 별개로 관리가능&lt;/li&gt;
-&lt;li&gt;redux는 flux아키텍쳐를 리액트에서만 사용할수있게 구현한것이다. mobx는 이와 다르게 UI 프레임워크에 관계없이 모든곳에서 사용가능한 상태관리 라이브러리다.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;컴포넌트는 다수의 mobx store에 접근가능하며, mobx의 데이터는 구독가능한 observable 형태로 관리된다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;5버전에서는 데코레이터(&lt;code class=&quot;language-text&quot;&gt;@&lt;/code&gt;)문법을 지원했었지만, 최신 문법이 아니였다. 이 때문에 프로젝트에 적용하려면 부가적인 환경설정이 필요했다. (구버전 브라우저 지원)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;mobx-core&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#mobx-core&quot; aria-label=&quot;mobx core permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;MobX core&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;핵심 개념들은 다음과 같다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;observable&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;구독가능한 형태로 상태를 관리할수 있게한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;action&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;구독가능해진 상태를 수정하는 메서드임을 나타낸다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;computed&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;상태와 캐시로부터 새로운 값을 가지는 게터를 반환한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;mobx6 에서는 객체를 구독가능하게 만드는 함수를 제공하는데, 이는 다음과 같다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;makeObservable&lt;/li&gt;
-&lt;li&gt;makeAutoObservable&lt;/li&gt;
-&lt;li&gt;observable&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;주로 class 문법과 같이 쓰인다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;code-classlanguage-textmakeobservabletarget-annotations-optionscode&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#code-classlanguage-textmakeobservabletarget-annotations-optionscode&quot; aria-label=&quot;code classlanguage textmakeobservabletarget annotations optionscode permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;code class=&quot;language-text&quot;&gt;makeObservable(target, annotations?, options?)&lt;/code&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;target&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Object 타입을 가진 모든 변수가 올 수 있다. class의 constructor에서 this를 넘겨줌으로써 class를 observable하게 만든다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;annotations&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;mobx5에서 데코레이터 문법으로 처리했던것을 객체로 표현하여 전달한다.&lt;/li&gt;
-&lt;li&gt;key에는 method명이 value에는 이 method가 어떻게 사용될것인지를 mobx 함수로 전달한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;options&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;makeObservable, makeAutoObservable, observable 에서 모두 사용되는 매개변수이다. 디버깅을 더 쉽게하거나 proxy 자동생성을 비활성화하는 등에 사용된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;class에서-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#class%EC%97%90%EC%84%9C-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;class에서 사용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;class에서 사용&lt;/h4&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; makeObservable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; observable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; action &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;mobx&quot;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Doubler&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    value
-
-    &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-				&lt;span class=&quot;token comment&quot;&gt;// 클래스 내부에는 value라는 프로퍼티가 있고, 이값을 구독가능하게 만듦&lt;/span&gt;
-
-        &lt;span class=&quot;token function&quot;&gt;makeObservable&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            value&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; observable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-
-						&lt;span class=&quot;token comment&quot;&gt;// double은 값을 변경하진 않는다. 하지만 값에 특정 computing을 하여 새로운 값을 만들어내고 그 값을 변수처럼 사용하게 해준다. -&gt; computed를 매핑해줌&lt;/span&gt;
-            double&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; computed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-
-						&lt;span class=&quot;token comment&quot;&gt;// increment 메서드는 value값을 변화 시킨다. -&gt; action 매핑해줌&lt;/span&gt;
-            increment&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; action
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; value
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token function&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&quot;중첩된-class에서-둘다-mobx-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%A4%91%EC%B2%A9%EB%90%9C-class%EC%97%90%EC%84%9C-%EB%91%98%EB%8B%A4-mobx-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;중첩된 class에서 둘다 mobx 사용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;중첩된 class에서 둘다 mobx 사용&lt;/h4&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; makeObservable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; observable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; computed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; action &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;mobx&quot;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;// not overridable&lt;/span&gt;
-    observable1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
-
-    &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token function&quot;&gt;makeObservable&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            observable1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; observable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-            computed1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; computed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-            action1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; action&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-            arrowAction1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; action
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;// overridable&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;computed1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;observable &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;// overridable&lt;/span&gt;
-    &lt;span class=&quot;token function&quot;&gt;action1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;observable&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;// not overridable&lt;/span&gt;
-    &lt;span class=&quot;token function-variable function&quot;&gt;arrowAction1&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;// workaround - not annotated - overridable&lt;/span&gt;
-    overridableArrowAction1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-
-&lt;span class=&quot;token comment&quot;&gt;// 부모를 확장했기때문에, 기존 메서드를 상속받는다.&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Child&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;// new&lt;/span&gt;
-    observable2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
-
-    &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token function&quot;&gt;makeObservable&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-						&lt;span class=&quot;token comment&quot;&gt;// 상속받았지만, 이 자식 클래스에서 새로 선언하고 싶다! -&gt; override 매핑하고, 이 클래스에서 다시 선언&lt;/span&gt;
-            action1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; override&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-            computed1&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; override&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;token comment&quot;&gt;// new fields&lt;/span&gt;
-            observable2&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; observable&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-            computed2&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; computed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-            action2&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; action&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-            arrowAction2&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; action
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;// overrides&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;computed1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;computed1 &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;// overrides&lt;/span&gt;
-    &lt;span class=&quot;token function&quot;&gt;action1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;action1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;// workaround - not annotated - overrides&lt;/span&gt;
-    overridableArrowAction1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;// new&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;computed2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;computed1 &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;// new&lt;/span&gt;
-    &lt;span class=&quot;token function&quot;&gt;action2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;action1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;// new&lt;/span&gt;
-    &lt;span class=&quot;token function-variable function&quot;&gt;arrowAction2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;code-classlanguage-textmakeautoobservabletarget-overrides-optionscode&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#code-classlanguage-textmakeautoobservabletarget-overrides-optionscode&quot; aria-label=&quot;code classlanguage textmakeautoobservabletarget overrides optionscode permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;code class=&quot;language-text&quot;&gt;makeAutoObservable(target, overrides?, options?)&lt;/code&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;target&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Object 타입을 가진 모든 변수가 올 수 있다. class의 constructor에서 this를 넘겨줌으로써 class를 observable하게 만든다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;overrides&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;자동으로 추론해주는 설정대신 직접 오버라이드를 원할 경우 사용한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;makeObservable과 비슷하게 프로퍼티들을 구독가능한 객체로 만든다.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;makeObservable에서 일일이 매핑해줬던 부분을 알아서 추론하여 매핑 해준다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;추론 규칙&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;멤버 프로퍼티가 포함된 메서드는 모두 autoAction 어노테이션이 달림&lt;/li&gt;
-&lt;li&gt;모든 getter들은 computed 어노테이션이 달림&lt;/li&gt;
-&lt;li&gt;모든 다른 프로퍼티에는 observable 어노테이션이 달림&lt;/li&gt;
-&lt;li&gt;(해석불가..)Any (inherited) member that is a generator function will be annotated with flow. (Note that generators functions are not detectable in some transpiler configurations, if flow doesn&apos;t work as expected, make sure to specify flow explicitly.)&lt;/li&gt;
-&lt;li&gt;overrides 인자에서 false로 매핑된 변수는 아무 어노테이션이 달리지않음 -&gt; 변경불가 -&gt; readonly 프로퍼티인 경우에 사용할 것&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;makeAutoObservable를 사용한 클래스는 다른 클래스를 상속받거나 자식 클래스를 가질 수 없다.&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;factory-function에서-mobx-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#factory-function%EC%97%90%EC%84%9C-mobx-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;factory function에서 mobx 사용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;factory function에서 mobx 사용&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://ui.toast.com/weekly-pick/ko_20160905&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;factory function?&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; makeAutoObservable &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;mobx&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;// 다음과 같이 class문법을 사용하지 않아도 mobx를 사용할 수 있다.
-function createDoubler(value) {
-return makeAutoObservable({
-value,
-get double() {
-return this.value * 2
-},
-increment() {
-this.value++
-}
-})
-}&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;### `observable(source, overrides?, options?)`
-- collection 타입 오브젝트를 구독가능하게 만들어준다.
-- 반환되는 객체는 [프록시](https://ko.javascript.info/proxy)된 객체이다. 이는 추가로 들어오는 데이터들도 observable하게 만들어준다. (새로들어온 데이터도 수정하려고하면 mobx가 구현한 observerble proxy를 거친다는 뜻?)
-- source
-	- 클론될 오브젝트이며, 모든 프로퍼티들은 makeAutoObservable 처럼 자동으로 추론되어 어노테이션된다.
-- overrides
-	- makeAutoObservable와 동일하다.
-
-#### 일반 객체에서 mobx 사용
-```js
-import { observable } from &amp;quot;mobx&amp;quot;
-
-
-// object, array, map, set에서도 사용가능하다. 결국 조상이 object여서 가능한건가?
-const todosById = observable({
-    &amp;quot;TODO-123&amp;quot;: {
-        title: &amp;quot;find a decent task management system&amp;quot;,
-        done: false
-    }
-})
-
-todosById[&amp;quot;TODO-456&amp;quot;] = {
-    title: &amp;quot;close all tickets older than two weeks&amp;quot;,
-    done: true
-}
-
-const tags = observable([&amp;quot;high prio&amp;quot;, &amp;quot;medium prio&amp;quot;, &amp;quot;low prio&amp;quot;])
-tags.push(&amp;quot;prio: for fun&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;observable을-다시-바닐라-javascript-컬렉션으로-변환&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#observable%EC%9D%84-%EB%8B%A4%EC%8B%9C-%EB%B0%94%EB%8B%90%EB%9D%BC-javascript-%EC%BB%AC%EB%A0%89%EC%85%98%EC%9C%BC%EB%A1%9C-%EB%B3%80%ED%99%98&quot; aria-label=&quot;observable을 다시 바닐라 javascript 컬렉션으로 변환 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Observable을 다시 바닐라 JavaScript 컬렉션으로 변환&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;api로 값을 보내거나, js기본 데이터형태가 필요할 때&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 객체면 ...연산자로 복사&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; plainObject &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;observableObject &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;// 배열이면 ...slice() 연산자로 복사
-const plainArray = observableArray.slice()&lt;/p&gt;
-&lt;p&gt;// Map이면 새로운 Map을 다시 생성
-const plainMap = new Map(observableMap)&lt;/p&gt;
-&lt;p&gt;// class일 경우는 toJSON() 메서드를 직접 구현하는것이 좋다고한다.
-const plainClass = new Example(observableMap).toJSON())&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;## 참고
-- [공식문서](https://mobx.js.org/observable-state.html)
-- [https://jaeheon.kr/174](https://jaeheon.kr/174)
-- [자바스크립트에서 팩토리 함수란 무엇인가?](https://ui.toast.com/weekly-pick/ko_20160905)
-- [Proxy와 Reflect](https://ko.javascript.info/proxy)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[github action 활용기 (로또 당첨번호 수집기)]]></title><description><![CDATA[계기 나는 로또를 매주 3천원씩 구매한다. 최근에 로또를 구매하면서 당첨번호에 대한 궁금증이 생겨서 찾아봤는데 1회부터 지금까지의 당첨번호를 주관사에서 제공하고 있지 않았다. 지금까지 당첨번호를 크롤링을 하여 저장하는건 쉽지만, 앞으로 당첨될 번호를…]]></description><link>https://padawanr0k.github.io/githubAction/</link><guid isPermaLink="false">https://padawanr0k.github.io/githubAction/</guid><pubDate>Fri, 01 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;계기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B3%84%EA%B8%B0&quot; aria-label=&quot;계기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;계기&lt;/h2&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[github action 활용기 (로또 당첨번호 수집기)]]></title><description><![CDATA[계기 나는 로또를 매주 3천원씩 구매한다. 최근에 로또를 구매하면서 당첨번호에 대한 궁금증이 생겨서 찾아봤는데 1회부터 지금까지의 당첨번호를 주관사에서 제공하고 있지 않았다. 지금까지 당첨번호를 크롤링을 하여 저장하는건 쉽지만, 앞으로 당첨될 번호를…]]></description><link>https://padawanr0k.github.io/githubAction/</link><guid isPermaLink="false">https://padawanr0k.github.io/githubAction/</guid><pubDate>Fri, 01 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;계기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B3%84%EA%B8%B0&quot; aria-label=&quot;계기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;계기&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;나는 로또를 매주 3천원씩 구매한다. 최근에 로또를 구매하면서 당첨번호에 대한 궁금증이 생겨서 찾아봤는데 1회부터 지금까지의 당첨번호를 주관사에서 제공하고 있지 않았다. 지금까지 당첨번호를 크롤링을 하여 저장하는건 쉽지만, 앞으로 당첨될 번호를 매번 업데이트하는것을 어떻게 자동화 하면 좋을지 고민하고 해결한 부분을 기록한다.&lt;/p&gt;
 &lt;h2 id=&quot;기능&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B8%B0%EB%8A%A5&quot; aria-label=&quot;기능 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;기능&lt;/h2&gt;
