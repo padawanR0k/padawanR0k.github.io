@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[R0k's l0g | Feed]]></title><description><![CDATA[록의 기록들]]></description><link>https://padawanr0k.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 30 Jan 2021 10:46:11 GMT</lastBuildDate><item><title><![CDATA[mobx 6 정리 - 01]]></title><description><![CDATA[리액트에서 사용하는 경우에 초점을 맞춰 작성 mobx 란? 클라이언트 사이드에서 사용하는 상태관리 라이브러리 state를 컴포넌트와 별개로 관리가능 redux는 flux아키텍쳐를 리액트에서만 사용할수있게 구현한것이다. mobx는 이와 다르게 UI 프…]]></description><link>https://padawanr0k.github.io/01/</link><guid isPermaLink="false">https://padawanr0k.github.io/01/</guid><pubDate>Sat, 30 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[R0k's l0g | Feed]]></title><description><![CDATA[록의 기록들]]></description><link>https://padawanr0k.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Mar 2021 09:32:32 GMT</lastBuildDate><item><title><![CDATA[mobx 6 - react 정리]]></title><description><![CDATA[리액트에서 사용하는 경우에 초점을 맞춰 작성 react에서 mobx 사용  개념  데코레이터는 observerble한 변수를 변화시키는 함수에 어노테이션할 때 사용한다. 만약 1개에 함수에서 3개의 observable한 변수를 수정하는 경우, 어노테…]]></description><link>https://padawanr0k.github.io/02/</link><guid isPermaLink="false">https://padawanr0k.github.io/02/</guid><pubDate>Sat, 30 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;리액트에서 사용하는 경우에 초점을 맞춰 작성&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;react에서-mobx-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#react%EC%97%90%EC%84%9C-mobx-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;react에서 mobx 사용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;react에서 mobx 사용&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add mobx  mobx-react&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;개념&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B0%9C%EB%85%90&quot; aria-label=&quot;개념 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;개념&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;action&lt;/code&gt; 데코레이터는 observerble한 변수를 변화시키는 함수에 어노테이션할 때 사용한다. 만약 1개에 함수에서 3개의 observable한 변수를 수정하는 경우, &lt;code class=&quot;language-text&quot;&gt;action&lt;/code&gt;어노테이션 유무에 따라 1번 렌더링이 되거나 3번렌더링이 된다. 이를 mobx에서는 트랜잭션 개념이라고한다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;computed&lt;/code&gt; 데코레이터는 getter에 사용하는 어노테이션이다. getter에서 발생하는 계산에 대한 동일한 입력에 대한 결과값을 캐싱하고 여러번 호출하지 않게 도와준다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Box&lt;/code&gt;라는 클래스가 존재하고, 내부에 너비를 구하는 getter가 있다고 생각해보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Box&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+x&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+y&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;x&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;y&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;makeAutoObservable&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; x&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; y&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// makeAutoObservable가 암묵적으로 computed를 어노테이션 해줌&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;area&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;x &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;y&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;p&gt;const myBox = new Box(5, 10);
+console.log(myBox.area); // 50
+console.log(myBox.area); // 50
+console.log(myBox.area); // 50&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;- 이때, `computed` 어노테이션이 처음에 계산한 값을 캐싱하여 나머지 2번에 호출에 대해서는 계산이 발생하지 않는다.
+## 참고&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://mobx.js.org/observable-state.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;공식문서&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jaeheon.kr/174&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://jaeheon.kr/174&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ui.toast.com/weekly-pick/ko_20160905&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;자바스크립트에서 팩토리 함수란 무엇인가?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ko.javascript.info/proxy&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Proxy와 Reflect&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[mobx 6 정리]]></title><description><![CDATA[리액트에서 사용하는 경우에 초점을 맞춰 작성 mobx 란? 클라이언트 사이드에서 사용하는 상태관리 라이브러리 state를 컴포넌트와 별개로 관리가능 redux는 flux아키텍쳐를 리액트에서만 사용할수있게 구현한것이다. mobx는 이와 다르게 UI 프…]]></description><link>https://padawanr0k.github.io/01/</link><guid isPermaLink="false">https://padawanr0k.github.io/01/</guid><pubDate>Sat, 30 Jan 2021 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;리액트에서 사용하는 경우에 초점을 맞춰 작성&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;mobx-란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#mobx-%EB%9E%80&quot; aria-label=&quot;mobx 란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;mobx 란?&lt;/h1&gt;
@@ -1261,33 +1305,4 @@ s &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&qu
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://company.gmarket.co.kr/company/about/company/company--font.asp&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;원본 폰트 (총 4,401kb)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/padawanR0k/GmarketSans-subset&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;GmarketSans subset (총 1,932kb)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[github에 react로 만든 페이지를 cli로 올려보자]]></title><description><![CDATA[원래는.. build -> git init -> 깃허브 레포생성 -> gh-pages 브랜치생성 후 다시 커밋 -> push react-gh-pages를 사용해서 편하게 해보자 react프로젝트로 이동 깃허브에 새로운 레포지토리 생성 packge.j…]]></description><link>https://padawanr0k.github.io/react-gh-pages/</link><guid isPermaLink="false">https://padawanr0k.github.io/react-gh-pages/</guid><pubDate>Tue, 25 Sep 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;원래는&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9B%90%EB%9E%98%EB%8A%94&quot; aria-label=&quot;원래는 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;원래는..&lt;/h1&gt;
-&lt;p&gt;build -&gt; git init -&gt; 깃허브 레포생성 -&gt; gh-pages 브랜치생성 후 다시 커밋 -&gt; push&lt;/p&gt;
-&lt;h1 id=&quot;react-gh-pages를-사용해서-편하게-해보자&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#react-gh-pages%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C-%ED%8E%B8%ED%95%98%EA%B2%8C-%ED%95%B4%EB%B3%B4%EC%9E%90&quot; aria-label=&quot;react gh pages를 사용해서 편하게 해보자 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;react-gh-pages를 사용해서 편하게 해보자&lt;/h1&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cli&quot;&gt;&lt;pre class=&quot;language-cli&quot;&gt;&lt;code class=&quot;language-cli&quot;&gt;npm install react-gh-pages --save-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol start=&quot;0&quot;&gt;
-&lt;li&gt;react프로젝트로 이동&lt;/li&gt;
-&lt;li&gt;깃허브에 새로운 레포지토리 생성&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;packge.json 수정&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token property&quot;&gt;&quot;homepage&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;http://[본인계정명].github.io/[생성한 레포명]&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;scripts 옵션 수정&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token property&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;//...&lt;/span&gt;
-&lt;span class=&quot;token property&quot;&gt;&quot;predeploy&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;npm run build&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token property&quot;&gt;&quot;deploy&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;gh-pages -d build&quot;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;git init&lt;/li&gt;
-&lt;li&gt;git에 레포지토리 주소 추가&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cli&quot;&gt;&lt;pre class=&quot;language-cli&quot;&gt;&lt;code class=&quot;language-cli&quot;&gt;git remote add origin https://github.com/[본인계정명]/[레포지토리 명].git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol start=&quot;6&quot;&gt;
-&lt;li&gt;
-&lt;p&gt;아까 packge.json에 등록해놓은 명령어를 실행하여 배포하자.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cli&quot;&gt;&lt;pre class=&quot;language-cli&quot;&gt;&lt;code class=&quot;language-cli&quot;&gt;npm run deploy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;  &lt;a href=&quot;https://github.com/gitname/react-gh-pages/tree/f7493337485ec85717a3bcd0fb732b13f5b0aada&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;react-gh-pages&lt;/a&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item></channel></rss>
