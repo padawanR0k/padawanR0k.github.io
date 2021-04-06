@@ -28,7 +28,7 @@ module.exports = {
   /** Post */
   enablePostOfContents: true,     // TableOfContents activation (Type of Value: Boolean. Not String)
   disqusShortname: 'https-padawanr0k-github-io',            // comments (Disqus sort-name)
-  enableSocialShare: true,        // Social share icon activation (Type of Value: Boolean. Not String)
+  enableSocialShare: false,        // Social share icon activation (Type of Value: Boolean. Not String)
 
   /** Optional */
   googleAnalytics: 'UA-112412636-1',     // Google Analytics TrackingID. ex.'UA-123456789-0'
