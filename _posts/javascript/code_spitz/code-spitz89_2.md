@@ -89,7 +89,123 @@ const iterateSum = (array) => {
 };
 ```
 
-### 과제 구현해보기
-- JSON.stringify를 구현 (1차원 배열을 매개변수로 받았을때만 구현)
-	- shell 탭에서 `node stringify_01.js`로 실행
-<iframe height="400px" width="100%" src="https://replit.com/@padawanR0k/codespitz?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+### 과제 구현 코드
+
+```javascript
+// JSON.stringify를 구현하시오
+// https://www.youtube.com/watch?v=rQOpmgo99BQ
+
+/**
+ * 자료
+ * https://reference.codeproject.com/Book/javascript/reference/global_objects/json/stringify
+ * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+ */
+class myJSON {
+  constructor() {
+
+  }
+
+  static get_type(data) {
+    if (data === null) {
+      return ('null');
+    } else if (data === undefined) {
+      return ('undefined');
+    } else {
+      return (typeof data);
+    }
+  }
+
+  static valueToString(value, valueOwnerConstructor) {
+    let str = '';
+    switch(myJSON.get_type(value)) {
+      case 'string':
+        str = `"${value.toString()}"`;
+        break;
+      case 'number':
+        str = value.toString();
+        break;
+      case 'null':
+        str = 'null';
+        break;
+      case 'undefined':
+        str = valueOwnerConstructor === Array ? 'null' : undefined;
+        break;
+      case 'function':
+        str = 'null';
+        break;
+      case 'symbol':
+        str = valueOwnerConstructor === Array ? 'null' : undefined;
+        break;
+      case 'boolean':
+        str = value.toString();
+        break;
+    }
+    return str;
+  }
+  static wrapStr(start, end, str) {
+    return `${start}${str.join(',')}${end}`;
+  }
+
+  static stringify(value) {
+    let str = '';
+    const valueType = myJSON.get_type(value);
+
+
+    if (valueType === 'null') {
+      str = 'null';
+    } else if (valueType === 'undefined') {
+      str = undefined;
+    } else if (value.constructor === Object) {
+      const strs = [];
+      for (let key in value) {
+        const v = myJSON.valueToString(value[key], value.constructor);
+        if (v) strs.push(`"${key}":${v}`);
+      }
+      str = myJSON.wrapStr('{', '}', strs);
+    } else if (value.constructor === Array) {
+      const strs = [];
+      for (let item of value) {
+        const v = myJSON.valueToString(item, value.constructor);
+        if (v) strs.push(`${v}`);
+      }
+      str = myJSON.wrapStr('[', ']', strs);
+    } else {
+      str += myJSON.valueToString(value, null);
+    }
+
+    return str;
+  }
+}
+
+const test01 = {
+  str: 'a',
+  num: 1,
+  'undefined': undefined,
+  'null': null,
+  symbol: Symbol('test'),
+  boolean: true,
+}
+
+const test02 = {};
+const test07 = [];
+const test03 = 1;
+const test04 = null;
+const test05 = 'foo';
+const test06 = [1, '1', true, null, undefined, Symbol(''), () => ''];
+const tests = [test01, test02, test07, test03,test04,test05, test06];
+
+function testMyJSON(v) {
+  try {
+    console.log(`==== myJSON() ====`)
+    console.log(myJSON.stringify(v))
+    console.log(`==== JSON() ====`)
+    console.log(JSON.stringify(v))
+    console.log("\n\n")
+  } catch (e) {
+    console.error(e)
+  }
+
+}
+
+tests.map(test => testMyJSON(test))
+```
