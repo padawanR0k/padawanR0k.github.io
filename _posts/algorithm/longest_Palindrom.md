@@ -1,7 +1,7 @@
 ---
 title: 알고리즘 문제 풀이 - 가장 긴 팰린드롬
 date:  2018-02-27
-tags: [알고리즘 문제 풀이]
+tags: [algorithm]
 
 ---
 https://programmers.co.kr/learn/challenge_codes/84

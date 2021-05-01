@@ -1,7 +1,7 @@
 ---
 title: 알고리즘 문제 풀이 - 행렬의 곱셈
 date:  2018-03-04
-tags: [알고리즘 문제 풀이]
+tags: [algorithm]
 
 ---
 https://programmers.co.kr/learn/challenge_codes/39

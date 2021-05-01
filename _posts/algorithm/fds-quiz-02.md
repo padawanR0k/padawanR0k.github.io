@@ -1,7 +1,7 @@
 ---
 title: 알고리즘 문제 풀이 (1)
 date:  2018-02-06
-tags: [알고리즘 문제 풀이]
+tags: [algorithm]
 
 ---
 

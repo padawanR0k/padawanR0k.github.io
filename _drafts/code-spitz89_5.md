@@ -126,16 +126,6 @@ console.log(result)
  * https://reference.codeproject.com/Book/javascript/reference/global_objects/json/stringify
  * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
  */
-const parseArray = (arr, valueOwnerConstructor) => {
-	let str = "";
-	for (let i of arr) {
-		const parsed = myJSON.valueToString(i, valueOwnerConstructor);
-		str += "," + parsed;
-	}
-	const result =  "[" + str.substr(1) + "]";
-	console.log(result);
-	return result;
-}
 
 const parsingRouter = {
 	'string': (v) => `"${v.toString()}"`,

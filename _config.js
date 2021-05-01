@@ -1,6 +1,6 @@
 module.exports = {
   /** Site MetaData (Required all)*/
-  title: `R0k's l0g`,                           // (* Required)
+  title: `r0k's l0g`,                           // (* Required)
   description: `록의 기록들`,          // (* Required)
   author: `padawanR0k`,                         // (* Required)
   language: 'ko-KR',                        // (* Required) html lang, ex. 'en' | 'en-US' | 'ko' | 'ko-KR' | ...

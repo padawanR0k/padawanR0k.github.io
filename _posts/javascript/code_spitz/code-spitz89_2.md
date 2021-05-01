@@ -3,6 +3,8 @@ title: 코드스피츠89 - Programming 101 2회차
 date: 2021-04-06
 tags: [javascript, 기초]
 keywords: [코드스피츠, javascript, 프로그래밍 기초]
+series: code_spitz89
+order: 2
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rQOpmgo99BQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

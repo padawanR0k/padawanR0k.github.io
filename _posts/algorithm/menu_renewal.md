@@ -1,7 +1,7 @@
 ---
 title: 알고리즘 문제 풀이 - 메뉴 리뉴얼
 date:  2021-04-22
-tags: [알고리즘 문제 풀이]
+tags: [algorithm]
 keywords: [메뉴 리뉴얼, 프로그래머스, "2021 KAKAO BLIND RECRUITMENT"]
 ---
 

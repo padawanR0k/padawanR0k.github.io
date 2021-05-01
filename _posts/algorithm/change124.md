@@ -1,7 +1,7 @@
 ---
 title: 알고리즘 문제 풀이 - 124나라의 숫자
 date:  2018-05-08
-tags: [알고리즘 문제 풀이]
+tags: [algorithm]
 
 ---
 https://programmers.co.kr/learn/challenge_codes/48/

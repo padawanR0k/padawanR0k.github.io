@@ -1,7 +1,7 @@
 ---
 title: 알고리즘 문제 풀이 - 공항 건설하기
 date:  2018-03-13
-tags: [알고리즘 문제 풀이]
+tags: [algorithm]
 
 ---
 https://programmers.co.kr/learn/challenge_codes/186

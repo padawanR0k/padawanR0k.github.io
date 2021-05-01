@@ -2,8 +2,6 @@
 title: CSS를 깔끔하게 작성하는법 - 1 (CSS 선언규칙)
 date:  2018-01-22
 tags: [css]
-categories : [css]
-
 ---
 
 
