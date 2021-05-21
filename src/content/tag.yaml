@@ -1,0 +1,27 @@
+- id: css
+  description: CSS
+  image: img/speeches-cover.jpg
+- id: git
+  description: git
+  image: img/speeches-cover.jpg
+- id: github
+  description: github
+  image: img/speeches-cover.jpg
+- id: error
+  description: 개발시 마주친 오류 해결 방법 기록
+  image: img/speeches-cover.jpg
+- id: html
+  description: html
+  image: img/speeches-cover.jpg
+- id: javascript
+  description: javascript
+  image: img/speeches-cover.jpg
+- id: mysql
+  description: mysql
+  image: img/speeches-cover.jpg
+- id: ft-seoul
+  description: "42서울을 하며 경험했던 부분들을 기록"
+  image: img/speeches-cover.jpg
+- id: algorithm
+  description: "알고리즘"
+  image: img/speeches-cover.jpg

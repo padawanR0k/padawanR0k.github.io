@@ -1,25 +1,89 @@
-# "Borderless" Theme, Built with Gatsby
+# gatsby-casper
 
-- **[Documents (Korean)](<https://github.com/junhobaik/junhobaik.github.io/wiki/Document-(Borderless)>)**  
-- **[Documents (English)](<https://github.com/junhobaik/junhobaik.github.io/wiki/Document-(Borderless,-en)>)**
+Demo: https://gatsby-casper.netlify.app
 
----
+This is a static blog generator and starter gatsby repo. A port of [Casper](https://github.com/TryGhost/Casper) v3 a theme from [Ghost](https://ghost.org/) for [GatsbyJS](https://www.gatsbyjs.org/) using [TypeScript](https://www.typescriptlang.org/).
 
-Gatsby로 제작된 정적 웹사이트,  
-블로그 Borderless 테마입니다.
+## Getting Started
 
-이 문서에서는 기본적으로 Github Pages로 배포하는 것을 기준으로 작성하였습니다.
+Clone this repo.
 
-**[Borderless DEMO WebSite](https://junhobaik.github.io)**
+```
+git clone https://github.com/scttcper/gatsby-casper.git --depth=1
+```
 
-- 선(Border)이 없는, 색이 최소화된 심플한 디자인
-- 마크다운 게시물 작성 (Markdown + emoji, ktex)
-- 검색 엔진 최적화 (SEO)
-- 사파리 브라우저 등 게시물내 읽기 모드(Reader Mode) 지원
-- Google Analytics 지원
-- Google Adsense 지원
-- Disqus 댓글 기능 지원
+Remove .git folder and setup a new one
 
-## Get Started
+```
+rm -rf .git && git init
+```
 
-자세한 가이드는 [Documents](<https://github.com/junhobaik/junhobaik.github.io/wiki/Document-(Borderless)>)를 확인해주세요.
+Edit website-config.ts with your website settings.
+Either disable subscribe or setup a mailchimp list and add the form action and hidden field input name.
+
+Now push to whatever repo you want!
+
+### Progress
+
+- [x] emotion / component styles
+- [x] home page
+- [x] tag page
+- [x] author page
+- [x] blog page
+  - [x] subscribe form - using [mailchimp](https://mailchimp.com)
+  - [ ] full width images in markdown? - not sure if possible
+  - [x] multiple post authors
+- [x] 404 page
+- [x] subscribe modal/overlay
+- [x] rss feed (on production build)
+- [ ] polish ✨
+  - [x] meta tags
+  - [x] page titles
+  - [ ] pagination
+
+### Deploy to Netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/scttcper/gatsby-casper)
+
+## How to configure Google Analytics
+
+Edit `gatsby-config.js` and add your tracking ID
+
+```javascript
+{
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      // Here goes your tracking ID
+      trackingId: 'UA-XXXX-Y',
+      // Puts tracking script in the head instead of the body
+      head: true,
+      // IP anonymization for GDPR compliance
+      anonymize: true,
+      // Disable analytics for users with `Do Not Track` enabled
+      respectDNT: true,
+      // Avoids sending pageview hits from custom paths
+      exclude: ['/preview/**'],
+      // Specifies what percentage of users should be tracked
+      sampleRate: 100,
+      // Determines how often site speed tracking beacons will be sent
+      siteSpeedSampleRate: 10,
+    },
+},
+```
+
+## How to edit your site title and description
+
+Edit `gatsby-config.js` section `siteMetadata`
+
+```javascript
+ siteMetadata: {
+    title: 'My awesome site name',
+    description: 'This is a description for my site',
+    siteUrl: 'https://mysite.com', // full path to blog - no ending slash
+  },
+```
+
+## How to adjust pagination
+
+In `gatsby-node.js`, edit the `postsPerPage` constant. The default value is
+six posts per page.

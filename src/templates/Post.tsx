@@ -1,365 +1,569 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-import * as React from 'react';
-import { useEffect, useState, useCallback, Suspense } from 'react';
-import { Helmet } from 'react-helmet';
-import { useSelector } from 'react-redux';
+import { format } from 'date-fns';
 import { graphql, Link } from 'gatsby';
-import moment from 'moment';
-import { FontAwesomeIcon as Fa } from '@fortawesome/react-fontawesome';
-import { faListUl, faLayerGroup, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import AdSense from 'react-adsense';
-import {
-  FacebookShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  RedditShareButton,
-  PocketShareButton,
-  EmailShareButton,
-  FacebookIcon,
-  TwitterIcon,
-  LinkedinIcon,
-  RedditIcon,
-  PocketIcon,
-  EmailIcon,
-} from 'react-share';
-import { throttle } from 'lodash';
+import Img, { FluidObject } from 'gatsby-image';
+import * as _ from 'lodash';
+import { lighten, setLightness } from 'polished';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
-import './post.scss';
-import './code-theme.scss';
-import 'katex/dist/katex.min.css';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-import Layout from '../components/Layout';
-import Toc from '../components/Toc';
-import SEO from '../components/seo';
+import { Footer } from '../components/Footer';
+import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
+import PostContent from '../components/PostContent';
+import { ReadNext } from '../components/ReadNext';
+import { Subscribe } from '../components/subscribe/Subscribe';
+import { Wrapper } from '../components/Wrapper';
+import IndexLayout from '../layouts';
+import { colors } from '../styles/colors';
+import { inner, outer, SiteMain } from '../styles/shared';
+import config from '../website-config';
+import { AuthorList } from '../components/AuthorList';
+import Comments from './comment';
+import { ISeries } from '../components/SeriesList';
 
-import { RootState } from '../state/reducer';
-import config from '../../_config';
-
-interface postProps {
-  data: any;
-  pageContext: { slug: string; series: any[]; lastmod: string };
+export interface Author {
+  id: string;
+  bio: string;
+  avatar: {
+    children: Array<{
+      fluid: FluidObject;
+    }>;
+  };
 }
 
-interface iConfig {
-  enablePostOfContents: boolean;
-  enableSocialShare: boolean;
-  disqusShortname?: string;
+interface PageTemplateProps {
+  location: Location;
+  data: {
+    logo: {
+      childImageSharp: {
+        fixed: any;
+      };
+    };
+    markdownRemark: {
+      html: string;
+      htmlAst: any;
+      excerpt: string;
+      frontmatter: {
+        title: string;
+        date: string;
+        userDate: string;
+        image: {
+          childImageSharp: {
+            fluid: any;
+          };
+        };
+        excerpt: string;
+        tags: string[];
+        author: Author[];
+      };
+      fields: {
+        tagSlugs: string[],
+        slug: string,
+        readingTime: {
+          text: string;
+        };
+      };
+      tableOfContents: string;
+    };
+    relatedPosts: {
+      totalCount: number;
+      edges: Array<{
+        node: {
+          timeToRead: number;
+          frontmatter: {
+            title: string;
+            date: string;
+          };
+          fields: {
+            slug: string;
+          };
+        };
+      }>;
+    };
+    seriesPosts: ISeries;
+  };
+  pageContext: {
+    prev: PageContext;
+    next: PageContext;
+    slug: string;
+  };
 }
 
-const Post = (props: postProps) => {
-  const isSSR = typeof window === 'undefined';
-
-  const { data, pageContext } = props;
-  const isMobile = useSelector((state: RootState) => state.isMobile);
-  const [yList, setYList] = useState([] as number[]);
-  const [isInsideToc, setIsInsideToc] = useState(false);
-  const [commentEl, setCommentEl] = useState<JSX.Element>();
-
-  const { markdownRemark } = data;
-  const { frontmatter, html, tableOfContents, fields, excerpt } = markdownRemark;
-  const { title, date, tags, keywords } = frontmatter;
-  let update = frontmatter.update;
-  if (Number(update?.split(',')[1]) === 1) update = null;
-  const { slug } = fields;
-  const { series } = pageContext;
-  const { enablePostOfContents, disqusShortname, enableSocialShare }: iConfig = config;
-  const isTableOfContents = enablePostOfContents && tableOfContents !== '';
-  const isDevelopment = process.env.NODE_ENV === 'development';
-  const isDisqus: boolean = disqusShortname ? true : false;
-  const isSocialShare = enableSocialShare;
-
-  const mapTags = tags.map((tag: string) => {
-    return (
-      <li key={tag} className="blog-post-tag">
-        <Link to={`/tags#${tag}`}>{`#${tag}`}</Link>
-      </li>
-    );
-  });
-
-  const mapSeries = series.map((s: any) => {
-    return (
-      <li key={`${s.slug}-series-${s.num}`} className={`series-item ${slug === s.slug ? 'current-series' : ''}`}>
-        <Link to={s.slug}>
-          <span>{s.title}</span>
-          <div className="icon-wrap">{slug === s.slug ? <Fa icon={faAngleLeft} /> : null}</div>
-        </Link>
-      </li>
-    );
-  });
-
-  const metaKeywords = useCallback((keywordList: string[], tagList: string[]) => {
-    const resultKeywords = new Set();
-    for (const v of [...keywordList, ...tagList]) resultKeywords.add(v);
-
-    return Array.from(resultKeywords) as string[];
-  }, []);
-
-  useEffect(() => {
-    if (isMobile) {
-      const adDiv = document.querySelector('.ad') as HTMLDivElement;
-
-      if (adDiv) {
-        const maxWidth = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight;
-        adDiv.style.maxWidth = `${maxWidth}px`;
-        adDiv.style.display = 'flex';
-        adDiv.style.justifyContent = 'flex-end';
-      }
-    }
-  }, [isMobile]);
-
-  useEffect(() => {
-    const setYPos = () => {
-      if (yList) {
-        const index =
-          yList.filter((v: number) => {
-            return v < window.pageYOffset;
-          }).length - 1;
-
-        const aList = document.querySelectorAll('.toc.outside li a') as NodeListOf<HTMLAnchorElement>;
-
-        for (const i in Array.from(aList)) {
-          if (parseInt(i, 10) === index) {
-            aList[i].style.opacity = '1';
-          } else {
-            aList[i].style.opacity = '0.4';
-          }
-        }
-      }
+export interface PageContext {
+  excerpt: string;
+  tableOfContents: any;
+  fields: {
+    slug: string;
+    readingTime: {
+      text: string;
     };
-
-    if (isTableOfContents) document.addEventListener('scroll', setYPos);
-    return () => {
-      if (isTableOfContents) document.removeEventListener('scroll', setYPos);
+  };
+  frontmatter: {
+    image: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
     };
-  }, [yList]);
+    excerpt: string;
+    title: string;
+    date: string;
+    draft?: boolean;
+    tags: string[];
+    author: Author[];
+  };
+}
 
-  useEffect(() => {
-    // scroll
-    const postContentOriginTop = document.querySelector('.blog-post')?.getBoundingClientRect().top ?? 0;
-    const removeScrollEvent = () => document.removeEventListener('scroll', scrollEvents);
-    const renderComment = () => {
-      const Comment = React.lazy(() => import('../components/Comment'));
-      setCommentEl(<Comment slug={slug} title={title} />);
-    };
-    const scrollEvents = throttle(() => {
-      const postContentHeight = document.querySelector('.blog-post')?.getBoundingClientRect().height ?? Infinity;
-      if (window.scrollY + window.innerHeight * 1.75 - postContentOriginTop > postContentHeight) {
-        renderComment();
-        removeScrollEvent();
-      }
-    }, 250);
-    scrollEvents();
-    document.addEventListener('scroll', scrollEvents);
+const PageTemplate = (props: PageTemplateProps) => {
 
-    // toc
-    const hs = Array.from(document.querySelectorAll('h2, h3')) as HTMLHeadingElement[];
-    const minusValue = window.innerHeight < 500 ? 100 : Math.floor(window.innerHeight / 5);
-    const yPositions = hs.map(h => h.offsetTop - minusValue);
-    setYList(yPositions);
+  const { data, pageContext, location } = props;
+  const post = data.markdownRemark;
+  const series = data.seriesPosts;
 
-    return () => removeScrollEvent();
-  }, []);
+  let width = '';
+  let height = '';
+  if (post.frontmatter.image?.childImageSharp) {
+    width = post.frontmatter.image.childImageSharp.fluid.sizes.split(', ')[1].split('px')[0];
+    height = String(Number(width) / post.frontmatter.image.childImageSharp.fluid.aspectRatio);
+  }
+
+  const date = new Date(post.frontmatter.date);
+  // 2018-08-20
+  const datetime = format(date, 'yyyy-MM-dd');
+  // 20 AUG 2018
+  const displayDatetime = format(date, 'dd LLL yyyy');
+
 
   return (
-    <>
+    <IndexLayout className="post-template">
       <Helmet>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script type="application/ld+json">
-          {`
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "datePublished": "${moment(new Date(date)).toISOString()}",
-  ${update ? `"dateModified": "${moment(new Date(update)).toISOString()}",` : ''}
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "${config.siteUrl}"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "${config.name}"
-  },
-  "headline": "${title}",
-  ${
-    config.profileImageFileName
-      ? `"publisher": {
-    "@type" : "organization",
-    "name" : "${config.name}",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "${config.siteUrl}${require(`../images/${config.profileImageFileName}`)}"
-    }
-  },
-  "image": ["${config.siteUrl}${require(`../images/${config.profileImageFileName}`)}"]`
-      : `"publisher": {
-    "@type" : "organization",
-    "name" : "${config.name}"
-  },
-  "image": []`
-  }
-}
-`}
-        </script>
+        <html lang={config.lang} />
+        <title>{post.frontmatter.title}</title>
+
+        <meta name="description" content={post.frontmatter.excerpt || post.excerpt} />
+        <meta property="og:site_name" content={config.title} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={post.frontmatter.title} />
+        <meta property="og:description" content={post.frontmatter.excerpt || post.excerpt} />
+        <meta property="og:url" content={config.siteUrl + location.pathname} />
+        {post.frontmatter.image?.childImageSharp && (
+          <meta
+            property="og:image"
+            content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.fluid.src}`}
+          />
+        )}
+        <meta property="article:published_time" content={post.frontmatter.date} />
+        {/* not sure if modified time possible */}
+        {/* <meta property="article:modified_time" content="2018-08-20T15:12:00.000Z" /> */}
+        {post.frontmatter.tags && (
+          <meta property="article:tag" content={post.frontmatter.tags[0]} />
+        )}
+
+        {config.facebook && <meta property="article:publisher" content={config.facebook} />}
+        {config.facebook && <meta property="article:author" content={config.facebook} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.frontmatter.title} />
+        <meta name="twitter:description" content={post.frontmatter.excerpt || post.excerpt} />
+        <meta name="twitter:url" content={config.siteUrl + location.pathname} />
+        {post.frontmatter.image?.childImageSharp && (
+          <meta
+            name="twitter:image"
+            content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.fluid.src}`}
+          />
+        )}
+        <meta name="twitter:label1" content="Written by" />
+        <meta name="twitter:data1" content={post.frontmatter.author[0].id} />
+        <meta name="twitter:label2" content="Filed under" />
+        {post.frontmatter.tags && <meta name="twitter:data2" content={post.frontmatter.tags[0]} />}
+        {config.twitter && (
+          <meta
+            name="twitter:site"
+            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
+          />
+        )}
+        {config.twitter && (
+          <meta
+            name="twitter:creator"
+            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
+          />
+        )}
+        {width && <meta property="og:image:width" content={width} />}
+        {height && <meta property="og:image:height" content={height} />}
       </Helmet>
-
-      <SEO title={title} description={excerpt} keywords={metaKeywords(keywords, tags)} />
-
-      <Layout>
-        <div className="blog-post-container">
-          <div className="blog-post">
-            <h1 className="blog-post-title">{title}</h1>
-
-            <div className="blog-post-info">
-              <div className="date-wrap">
-                <span className="write-date">{date}</span>
-                {update ? (
-                  <>
-                    <span>(</span>
-                    <span className="update-date">{`Last updated: ${update}`}</span>
-                    <span>)</span>
-                  </>
-                ) : null}
-              </div>
-
-              {tags.length && tags[0] !== 'undefined' ? (
-                <>
-                  <span className="dot">·</span>
-                  <ul className="blog-post-tag-list">{mapTags}</ul>
-                </>
-              ) : null}
-
-              {!isTableOfContents ? null : (
-                <div className="blog-post-inside-toc">
-                  <div
-                    className="toc-button"
-                    role="button"
-                    onClick={() => {
-                      setIsInsideToc((prev: boolean) => {
-                        return !prev;
-                      });
-                    }}
-                  >
-                    <Fa icon={faListUl} />
-                  </div>
-                </div>
-              )}
+      <Wrapper css={PostTemplate}>
+        <header className="site-header">
+          <div css={[outer, SiteNavMain]}>
+            <div css={inner}>
+              <SiteNav isPost post={post.frontmatter} />
             </div>
-
-            {!isTableOfContents ? null : (
-              <div className="inside-toc-wrap" style={{ display: isInsideToc ? 'flex' : 'none' }}>
-                <Toc isOutside={false} toc={tableOfContents} />
-              </div>
-            )}
-
-            {series.length > 1 ? (
-              <>
-                <div className="series">
-                  <div className="series-head">
-                    <span className="head">Post Series</span>
-                    <div className="icon-wrap">
-                      <Fa icon={faLayerGroup} />
-                    </div>
-                  </div>
-                  <ul className="series-list">{mapSeries}</ul>
-                </div>
-              </>
-            ) : null}
-
-            <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
           </div>
+        </header>
+        <main id="site-main" className="site-main" css={[SiteMain, outer]}>
+          <div css={inner}>
+            {/* TODO: no-image css tag? */}
+            <article css={[PostFull, !post.frontmatter.image && NoImage]}>
+              <PostFullHeader className="post-full-header">
+                <PostFullTags className="post-full-tags">
+                  {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
+                    <Link to={`/tags/${_.kebabCase(post.frontmatter.tags[0])}/`}>
+                      {post.frontmatter.tags[0]}
+                    </Link>
+                  )}
+                </PostFullTags>
+                <PostFullTitle className="post-full-title">{post.frontmatter.title}</PostFullTitle>
+                <PostFullCustomExcerpt className="post-full-custom-excerpt">
+                  {post.frontmatter.excerpt}
+                </PostFullCustomExcerpt>
+                <PostFullByline className="post-full-byline">
+                  <section className="post-full-byline-content">
+                    <AuthorList authors={post.frontmatter.author} tooltip="large" />
+                    <section className="post-full-byline-meta">
+                      <h4 className="author-name">
+                        {post.frontmatter.author.map(author => (
+                          <Link key={author.id} to={`/author/${_.kebabCase(author.id)}/`}>
+                            {author.id}
+                          </Link>
+                        ))}
+                      </h4>
+                      <div className="byline-meta-content">
+                        <time className="byline-meta-date" dateTime={datetime}>
+                          {displayDatetime}
+                        </time>
+                        <span className="byline-reading-time">
+                          <span className="bull">&bull;</span>{post.fields.readingTime.text}
+                        </span>
+                      </div>
+                    </section>
+                  </section>
+                </PostFullByline>
+              </PostFullHeader>
 
-          {isSocialShare ? (
-            <div className="social-share">
-              <ul>
-                <li className="social-share-item email">
-                  <EmailShareButton url={config.siteUrl + slug}>
-                    <EmailIcon size={24} round={true} />
-                  </EmailShareButton>
-                </li>
-                <li className="social-share-item facebook">
-                  <FacebookShareButton url={config.siteUrl + slug}>
-                    <FacebookIcon size={24} round={true} />
-                  </FacebookShareButton>
-                </li>
-                <li className="social-share-item twitter">
-                  <TwitterShareButton url={config.siteUrl + slug}>
-                    <TwitterIcon size={24} round={true} />
-                  </TwitterShareButton>
-                </li>
-                <li className="social-share-item linkedin">
-                  <LinkedinShareButton url={config.siteUrl + slug}>
-                    <LinkedinIcon size={24} round={true} />
-                  </LinkedinShareButton>
-                </li>
-                <li className="social-share-item reddit">
-                  <RedditShareButton url={config.siteUrl + slug}>
-                    <RedditIcon size={24} round={true} />
-                  </RedditShareButton>
-                </li>
-                <li className="social-share-item pocket">
-                  <PocketShareButton url={config.siteUrl + slug}>
-                    <PocketIcon size={24} round={true} />
-                  </PocketShareButton>
-                </li>
-              </ul>
-            </div>
-          ) : null}
+              {post.frontmatter.image?.childImageSharp && (
+                <PostFullImage>
+                  <Img
+                    style={{ height: '100%' }}
+                    fluid={post.frontmatter.image.childImageSharp.fluid}
+                    alt={post.frontmatter.title}
+                  />
+                </PostFullImage>
+              )}
 
-          {isDevelopment ? (
-            <>
-              <aside className="ad ad-dev">
-                <span>Ads</span>
-                <span>displayed when you deploy</span>
-              </aside>
-              {isDisqus ? (
-                <div className="comments comments-dev">
-                  <span>Comments</span>
-                  <span>displayed when you deploy</span>
-                </div>
-              ) : null}
-            </>
-          ) : (
-            <>
-              <aside className="ad">
-                <AdSense.Google
-                  client={config.googleAdsenseClient || 'ca-pub-5001380215831339'}
-                  slot={config.googleAdsenseSlot || '5214956675'}
-                  style={{ display: 'block' }}
-                  format="auto"
-                  responsive="true"
-                />
-              </aside>
+              <PostContent htmlAst={post.htmlAst} toc={post.tableOfContents} series={series} currentSlug={pageContext.slug} >
+              </PostContent>
 
-              {!isSSR ? <Suspense fallback={<></>}>{commentEl}</Suspense> : null}
-            </>
-          )}
-        </div>
+              {/* The big email subscribe modal content */}
+              {config.showSubscribe && <Subscribe title={config.title} />}
 
-        {!isTableOfContents ? null : <Toc isOutside={true} toc={tableOfContents} />}
-      </Layout>
-    </>
+              <Comments
+                slug={post.fields.slug}
+                title={post.frontmatter.title} />
+            </article>
+          </div>
+        </main>
+
+        <ReadNext
+          currentPageSlug={location.pathname}
+          tags={post.frontmatter.tags}
+          relatedPosts={data.relatedPosts}
+          pageContext={pageContext}
+        />
+
+        <Footer />
+      </Wrapper>
+    </IndexLayout>
   );
 };
 
-export const pageQuery = graphql`
-  query($slug: String) {
+const PostTemplate = css`
+  .site-main {
+    margin-top: 64px;
+    background: #fff;
+    padding-bottom: 4vw;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .site-main {
+      /* background: var(--darkmode); */
+      background: ${colors.darkmode};
+    }
+  }
+`;
+
+export const PostFull = css`
+  position: relative;
+  z-index: 50;
+`;
+
+export const NoImage = css`
+  .post-full-content {
+    padding-top: 0;
+    height: auto;
+  }
+
+  .post-full-content:before,
+  .post-full-content:after {
+    display: none;
+  }
+`;
+
+export const PostFullHeader = styled.header`
+  position: relative;
+  margin: 0 auto;
+  padding: 70px 170px 50px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+
+  @media (max-width: 1170px) {
+    padding: 60px 11vw 50px;
+  }
+
+  @media (max-width: 800px) {
+    padding-right: 5vw;
+    padding-left: 5vw;
+  }
+
+  @media (max-width: 500px) {
+    padding: 20px 0 35px;
+  }
+`;
+
+const PostFullTags = styled.section`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* color: var(--midgrey); */
+  color: ${colors.midgrey};
+  font-size: 1.3rem;
+  line-height: 1.4em;
+  font-weight: 600;
+  text-transform: uppercase;
+`;
+
+const PostFullCustomExcerpt = styled.p`
+  margin: 20px 0 0;
+  color: var(--midgrey);
+  font-family: Georgia, serif;
+  font-size: 2.3rem;
+  line-height: 1.4em;
+  font-weight: 300;
+
+  @media (max-width: 500px) {
+    font-size: 1.9rem;
+    line-height: 1.5em;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    /* color: color(var(--midgrey) l(+10%)); */
+    color: ${lighten('0.1', colors.midgrey)};
+  }
+`;
+
+const PostFullByline = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 0 0;
+  padding-top: 15px;
+  /* border-top: 1px solid color(var(--lightgrey) l(+10%)); */
+  border-top: 1px solid ${lighten('0.1', colors.lightgrey)};
+
+  .post-full-byline-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .post-full-byline-content .author-list {
+    justify-content: flex-start;
+    padding: 0 12px 0 0;
+  }
+
+  .post-full-byline-meta {
+    margin: 2px 0 0;
+    /* color: color(var(--midgrey) l(+10%)); */
+    color: ${lighten('0.1', colors.midgrey)};
+    font-size: 1.2rem;
+    line-height: 1.2em;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
+
+  .post-full-byline-meta h4 {
+    margin: 0 0 3px;
+    font-size: 1.3rem;
+    line-height: 1.4em;
+    font-weight: 500;
+  }
+
+  .post-full-byline-meta h4 a {
+    /* color: color(var(--darkgrey) l(+10%)); */
+    color: ${lighten('0.1', colors.darkgrey)};
+  }
+
+  .post-full-byline-meta h4 a:hover {
+    /* color: var(--darkgrey); */
+    color: ${colors.darkgrey};
+  }
+
+  .post-full-byline-meta .bull {
+    display: inline-block;
+    margin: 0 4px;
+    opacity: 0.6;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    /* border-top-color: color(var(--darkmode) l(+15%)); */
+    border-top-color: ${lighten('0.15', colors.darkmode)};
+
+    .post-full-byline-meta h4 a {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .post-full-byline-meta h4 a:hover {
+      color: #fff;
+    }
+  }
+`;
+
+export const PostFullTitle = styled.h1`
+  margin: 0 0 0.2em;
+  color: ${setLightness('0.05', colors.darkgrey)};
+  @media (max-width: 500px) {
+    margin-top: 0.2em;
+    font-size: 3.3rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: rgba(255, 255, 255, 0.9);
+  }
+`;
+
+const PostFullImage = styled.figure`
+  margin: 25px 0 50px;
+  height: 800px;
+  background: ${colors.lightgrey} center center;
+  background-size: cover;
+  border-radius: 5px;
+
+  @media (max-width: 1170px) {
+    margin: 25px -6vw 50px;
+    border-radius: 0;
+    img {
+      max-width: 1170px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    height: 400px;
+  }
+  @media (max-width: 500px) {
+    margin-bottom: 4vw;
+    height: 350px;
+  }
+`;
+
+export const query = graphql`
+  query($slug: String, $primaryTag: String, $series: String) {
+    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+      childImageSharp {
+        fixed {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      excerpt(truncate: true, format: PLAIN)
-      tableOfContents
+      htmlAst
+      excerpt
       fields {
+        readingTime {
+          text
+        }
         slug
+        series
+        # tagSlugs
       }
       frontmatter {
+        series
         title
-        date(formatString: "MMM DD, YYYY")
+        userDate: date(formatString: "D MMMM YYYY")
+        date
         tags
-        keywords
-        update(formatString: "MMM DD, YYYY")
+        excerpt
+        image {
+          childImageSharp {
+            fluid(maxWidth: 3720) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        author {
+          id
+          bio
+          avatar {
+            children {
+              ... on ImageSharp {
+                fluid(quality: 100, srcSetBreakpoints: [40, 80, 120]) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+
+      tableOfContents
+    }
+    relatedPosts: allMarkdownRemark(
+      filter: { frontmatter: { tags: { in: [$primaryTag] }, draft: { ne: true } } }
+      limit: 5
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          excerpt
+          frontmatter {
+            title
+            date
+          }
+          fields {
+            readingTime {
+              text
+            }
+            slug
+          }
+        }
+      }
+    }
+
+    seriesPosts:  allMarkdownRemark(
+      filter: { frontmatter: { series: { eq: $series, ne: null }, draft: { ne: true } } }
+      limit: 5
+      sort: { fields: [frontmatter___date], order: ASC }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          excerpt
+          frontmatter {
+            title
+            date
+            order
+            series
+          }
+          fields {
+            readingTime {
+              text
+            }
+            slug
+          }
+        }
       }
     }
   }
 `;
 
-export default Post;
+export default PageTemplate;

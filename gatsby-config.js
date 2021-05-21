@@ -1,249 +1,125 @@
-const config = require('./_config');
-const { title, description, author, googleAnalytics, siteUrl, language } = config;
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path');
 
-const gatsbyConfig = {
-  siteMetadata: { title, description, author, siteUrl, language },
-
+module.exports = {
+  siteMetadata: {
+    title: `r0k's l0g`,
+    description: 'dev blog',
+    siteUrl: 'https://padawanr0k.github.io', // full path to blog - no ending slash
+  },
+  mapping: {
+    'MarkdownRemark.frontmatter.author': 'AuthorYaml',
+  },
   plugins: [
-    `gatsby-plugin-typescript`,
-
-    `gatsby-plugin-react-helmet`,
-
-    `gatsby-plugin-theme-ui`,
-
-    `gatsby-plugin-sass`,
-
-    `gatsby-transformer-sharp`,
-
-    `gatsby-plugin-sharp`,
-
+    'gatsby-plugin-sitemap',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-sharp',
       options: {
-        trackingId: googleAnalytics,
+        defaultQuality: 100,
+        stripMetadata: true,
       },
     },
-
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/_posts`,
+        name: 'content',
+        path: path.join(__dirname, 'src', 'content'),
       },
     },
-
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
-        tableOfContents: {
-          maxDepth: 3,
-        },
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-responsive-iframe',
             options: {
-              maxWidth: 590,
-              loading: 'lazy',
+              wrapperStyle: 'margin-bottom: 1rem',
+            },
+          },
+          // 'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+          'gatsby-remark-reading-time',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 2000,
+              quality: 100,
             },
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: `gatsby-remark-table-of-contents`,
             options: {
-              classPrefix: 'language-',
-              inlineCodeMarker: null,
-              showLineNumbers: false,
-              noInlineHighlight: false,
-              escapeEntities: {},
-              aliases: {
-                react: 'jsx',
-                javascriptreact: 'jsx',
-                'javascript react': 'jsx',
-                typescriptreact: 'tsx',
-                'typescript react': 'tsx',
-              },
-            },
-          },
-          {
-            resolve: 'gatsby-remark-emojis',
-            options: {
-              active: true,
-              class: 'emoji-icon',
-              size: 64,
-              styles: {
-                display: 'inline',
-                margin: '0',
-                'margin-top': '1px',
-                position: 'relative',
-                top: '5px',
-                width: '25px',
-              },
+              exclude: "Table of Contents",
+              tight: false,
+              ordered: false,
+              fromHeading: 1,
+              toHeading: 6,
+              className: "table-of-contents"
             },
           },
           `gatsby-remark-autolink-headers`,
+          // {
+          //   resolve: "gatsby-remark-series",
+          //   options: {
+          //     render: {
+          //       placeholder: "top",
+          //     },
+          //   }
+          // },
           {
-            resolve: `gatsby-remark-katex`,
+            resolve: `gatsby-remark-highlight-code`,
             options: {
-              strict: `ignore`,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-external-links',
-            options: {
-              target: '_blank',
-            },
-          },
-          `gatsby-remark-copy-linked-files`,
-        ],
-      },
-    },
-
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: title,
-        short_name: title,
-        description: description,
-        start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#6a737d`,
-        theme_color_in_head: false,
-        lang: language,
-        display: `standalone`,
-        icon: 'src/images/icon.png',
-        legacy: false,
-        include_favicon: false,
-        crossOrigin: `use-credentials`,
-      },
-    },
-
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography.ts`,
-      },
-    },
-
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: `/sitemap.xml`,
-        query: `
-          {
-          site {
-              siteMetadata {
-                  siteUrl
-              }
-          }
-
-          allSitePage {
-            edges {
-              node {
-                path
-                context {
-                  lastmod
-                }
-              }
+              // terminal: 'carbon',
+              theme: 'one-dark',
+              // lineNumbers: true,
             }
-          }
-      }`,
-        serialize: ({ site, allSitePage }) => {
-          return allSitePage.edges.map(edge => {
-            return {
-              url: site.siteMetadata.siteUrl + edge.node.path,
-              changefreq: `daily`,
-              lastmod: edge.node.context.lastmod,
-              priority: 0.7,
-            };
-          });
-        },
-      },
-    },
-
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
-                });
-              });
-            },
-            query: `
-              {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] }, limit: 10
-                ) {
-                  edges {
-                    node {
-                      excerpt(truncate: true, format: PLAIN)
-                      html
-                      fields { slug }
-                      frontmatter {
-                        title
-                        date
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: '/rss.xml',
-            title: `${title} | Feed`,
           },
         ],
       },
     },
-
+    'gatsby-transformer-json',
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        host: siteUrl,
-        sitemap: `${siteUrl}${siteUrl[siteUrl.length - 1] !== '/' ? '/' : ''}sitemap.xml`,
-        policy: [{ userAgent: '*', allow: '/' }],
+        siteUrl: 'https://padawanr0k.github.io',
       },
+    },
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-emotion',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-yaml',
+    'gatsby-plugin-feed',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [require('postcss-color-function'), require('cssnano')()],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-112412636-1',
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // IP anonymization for GDPR compliance
+        anonymize: false,
+        // Disable analytics for users with `Do Not Track` enabled
+        respectDNT: false,
+        // Avoids sending pageview hits from custom paths
+        exclude: ['/preview/**'],
+        // Specifies what percentage of users should be tracked
+        sampleRate: 100,
+        // Determines how often site speed tracking beacons will be sent
+        siteSpeedSampleRate: 10,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-disqus',
+      options: {
+        shortname: 'https-padawanr0k-github-io',
+      }
     },
   ],
 };
-
-if (process.env.NODE_ENV === 'development') {
-  gatsbyConfig.plugins.push({
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      path: `${__dirname}/_drafts`,
-      name: 'markdown-pages',
-    },
-  });
-}
-
-if (process.env.NODE_ENV === 'production') {
-  gatsbyConfig.plugins.push(`gatsby-plugin-preact`);
-}
-
-module.exports = gatsbyConfig;
