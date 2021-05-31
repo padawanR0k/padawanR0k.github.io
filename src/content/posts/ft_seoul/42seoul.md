@@ -2,7 +2,9 @@
 author: [padawanr0k]
 title: 42서울 4기 1차 라피신 후기
 date: 2021-03-29
-tags: ["ft-seoul"]
+tags: ["42seoul"]
+layout: post
+image: ../../img/42seoul_title.jpeg
 # keywords: [42서울, 라피신, 라피씬, 42seoul, la piscine]
 ---
 

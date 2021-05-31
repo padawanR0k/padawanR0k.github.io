@@ -19,7 +19,7 @@
 - id: mysql
   description: mysql
   image: img/speeches-cover.jpg
-- id: ft-seoul
+- id: 42seoul
   description: "42서울을 하며 경험했던 부분들을 기록"
   image: img/speeches-cover.jpg
 - id: algorithm

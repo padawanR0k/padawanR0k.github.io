@@ -3,7 +3,7 @@ author: [padawanr0k]
 title: 코드스피츠89 - Programming 101 4회차
 series: "codespitz89"
 order: 4
-draft: true
+draft: false
 date: 2021-04-21
 tags: [javascript]
 keywords: [코드스피츠, javascript, 프로그래밍 기초]
