@@ -1,0 +1,30 @@
+---
+draft: true
+layout: post
+title: express 이미지 업로드하기
+author: [padawanr0k]
+date: 2021-06-11
+tags: javascript
+---
+
+이미지를 서버에 전달하여 저장하는 방법을 알아보자.
+
+### 저장할 위치
+- 저장되는 위치를 서버의 파일로서 저장하는 방법
+	- 라이브러리를 사용하여 구현하는 것은 쉬우나 관리하는 것이 어려움
+- AWS S3처럼 객체 스토리지 서비스를 사용하는 방법
+	- 라이브러리를 사용하여 구현하는 것은 전자보다 조금 어려우나 관리하는 것이 편하고, aws의 기능을 활용할 수 있음
+여기서는 S3를 활용하여 올리는 방법을 알아보자
+
+### AWS S3 방법
+1. HTML input type=file
+2. submit시 전달 방법은 formData로 (file타입이라서 세번째 프로퍼티 전달해줘야함)
+3. 서버에서는 미들웨어로 감지
+	4. 업로드하는 코드 작성
+5. DB에는 URL만 저장
+
+
+### 참고
+- [Express + Multer, 어렵지 않게 사용하기 - S3](https://gngsn.tistory.com/40)
+- [FormData](https://developer.mozilla.org/ko/docs/Web/API/FormData/append)
+---
