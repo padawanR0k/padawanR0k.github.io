@@ -27,4 +27,3 @@ tags: javascript
 ### 참고
 - [Express + Multer, 어렵지 않게 사용하기 - S3](https://gngsn.tistory.com/40)
 - [FormData](https://developer.mozilla.org/ko/docs/Web/API/FormData/append)
----

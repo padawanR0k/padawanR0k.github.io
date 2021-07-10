@@ -1,13 +1,13 @@
 ---
-author: [padawanr0k]
 title: CI를 위한 github action사용기
-image: img/android-github-actions-setup-image.png
+layout: post
+image: ../../img/android-github-actions-setup-image.png
+author: [padawanr0k]
 date:  2021-06-14
-tags: github
-
+tags: [github]
 ---
 
-42서울 클러스터 입장시 활용되는 체크인웹 서비스를 이어받게 되면서 평소에 해보고 싶었던 기술을 사용해보고 싶었다.
+> 42서울 클러스터 입장시 활용되는 체크인웹 서비스를 이어받게 되면서 평소에 해보고 싶었던 기술을 사용해보고 싶었다.
 
 ## 내가 원했던 기능
 
@@ -19,7 +19,7 @@ tags: github
 
 ## github action이란?
 
-> 리포지토리의 상태를 특정 조건으로 반응하는 컴퓨팅 도구 이다. 예를 들면, 깃허브 리포지토리로 파일을 푸쉬 시, 그 푸쉬 된 파일을 베이스로 가상 리눅스가 만들어지고 사용자가 설정해놓은 순서대로 작업이 시작된다.([출처](https://meaownworld.tistory.com/162))
+- 리포지토리의 상태를 특정 조건으로 반응하는 컴퓨팅 도구 이다. 예를 들면, 깃허브 리포지토리로 파일을 푸쉬 시, 그 푸쉬 된 파일을 베이스로 가상 리눅스가 만들어지고 사용자가 설정해놓은 순서대로 작업이 시작된다.([출처](https://meaownworld.tistory.com/162))
 - 공개 레포지토리인 경우 무료로 사용가능하다.
 
 ## 흐름
@@ -155,7 +155,6 @@ jobs:
 
 ## 참고
 - https://dev.to/lukasborawski/node-js-app-deployment-with-aws-pm2-and-github-actions-31o2
-- [Deploying a Production ready React-Express app on AWS EC2 with CI/CD
-](https://gist.github.com/rmiyazaki6499/b564b40e306707c8ff6ca9c67d38fb6f#github-actions)
+- [Deploying a Production ready React-Express app on AWS EC2 with CI/CD](https://gist.github.com/rmiyazaki6499/b564b40e306707c8ff6ca9c67d38fb6f#github-actions)
 - [GitHub Actions로 간단히 CI 서버 대신하기](https://huns.me/posts/2019-12-17-34)
 - [Github Actions 예제로 workflow 알아보기 (비용, 제한)](https://meaownworld.tistory.com/162)
