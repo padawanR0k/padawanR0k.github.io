@@ -57,11 +57,16 @@ const About: React.FC = () => (
             <PostFullContent className="post-full-content">
               <div className="post-content">
                 <h2>
-                  HI!
+                  안녕하세요 :)
                 </h2>
                 <p>
-                  노련한 개발자가 되기위해 기록하는 블로그입니다. <br/>
-                  잘못된 내용은 언제든지 피드백해주셔도 좋습니다 :)
+                  이 블로그는 미래의 나를 위해, <br/>
+                  비슷한 이슈를 겪고있을 다른 이를 위해, <br/>
+                  기록하고 있습니다.
+                </p>
+                <p>
+                  과거, 저는 과거에 프론트엔드개발자로 2년간 일한 경험이 있습니다. <br/>
+                  현재, 저는 42서울에서 C언어를 사용해 문자열 처리, 자료구조, 알고리즘, 리눅스 시스템 프로그래밍 등을 공부하고 있습니다.
                 </p>
               </div>
             </PostFullContent>

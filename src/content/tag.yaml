@@ -25,3 +25,6 @@
 - id: algorithm
   description: "알고리즘"
   image: img/speeches-cover.jpg
+- id: web
+  description: "웹"
+  image: img/speeches-cover.jpg
