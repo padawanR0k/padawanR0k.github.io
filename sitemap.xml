@@ -7,8 +7,8 @@
 <url> <loc>https://padawanr0k.github.io/posts/javascript/prototype/index/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/algorithm/fds-quiz-02/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/algorithm/MinimumValue/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://padawanr0k.github.io/posts/algorithm/adder/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/algorithm/Palindrom/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/posts/algorithm/adder/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/algorithm/isPair/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/error/deployError/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/etc/AI_pusblisher/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -40,8 +40,8 @@
 <url> <loc>https://padawanr0k.github.io/posts/mysql/index/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/github/index/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/javascript/webpack/index/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://padawanr0k.github.io/posts/javascript/mobx/02/index/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/javascript/mobx/01/index/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/posts/javascript/mobx/02/index/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/javascript/codeSpitz/codeSpitz89_1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/ft_seoul/42seoul/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/javascript/codeSpitz/codeSpitz89_2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -54,6 +54,7 @@
 <url> <loc>https://padawanr0k.github.io/posts/ft_seoul/get_next_line/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/github/githubAction/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/posts/ft_seoul/42checkin/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/posts/web/cookie/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/tags/css/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/tags/algorithm/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/tags/javascript/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -65,6 +66,7 @@
 <url> <loc>https://padawanr0k.github.io/tags/github/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/tags/mysql/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/tags/42-seoul/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://padawanr0k.github.io/tags/web/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/author/ghost/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/author/padawanr-0-k/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://padawanr0k.github.io/author/another-author/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
