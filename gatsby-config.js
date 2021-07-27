@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: `r0k's l0g`,
+    title: 'r0k\'s l0g',
     description: 'dev blog',
     siteUrl: 'https://padawanr0k.github.io', // full path to blog - no ending slash
   },
@@ -12,6 +12,16 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-WZNNV3X',
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: 'gatsby' },
+
+        enableWebVitalsTracking: true,
+      },
+    },
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
@@ -48,17 +58,17 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-table-of-contents`,
+            resolve: 'gatsby-remark-table-of-contents',
             options: {
-              exclude: "Table of Contents",
+              exclude: 'Table of Contents',
               tight: false,
               ordered: false,
               fromHeading: 1,
               toHeading: 6,
-              className: "table-of-contents"
+              className: 'table-of-contents',
             },
           },
-          `gatsby-remark-autolink-headers`,
+          'gatsby-remark-autolink-headers',
           // {
           //   resolve: "gatsby-remark-series",
           //   options: {
@@ -68,13 +78,14 @@ module.exports = {
           //   }
           // },
           {
-            resolve: `gatsby-remark-highlight-code`,
+            resolve: 'gatsby-remark-highlight-code',
             options: {
               // terminal: 'carbon',
               theme: 'one-dark',
               // lineNumbers: true,
-            }
+            },
           },
+
         ],
       },
     },
@@ -119,7 +130,7 @@ module.exports = {
       resolve: 'gatsby-plugin-disqus',
       options: {
         shortname: 'https-padawanr0k-github-io',
-      }
+      },
     },
   ],
 };

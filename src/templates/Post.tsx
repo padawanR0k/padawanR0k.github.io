@@ -299,6 +299,7 @@ export const NoImage = css`
   .post-full-content {
     padding-top: 0;
     height: auto;
+    font-size: 1.6rem;
   }
 
   .post-full-content:before,
@@ -426,6 +427,10 @@ const PostFullByline = styled.div`
 `;
 
 export const PostFullTitle = styled.h1`
+  --text-bg: #2e87e7,#f05f70;
+  background-image: linear-gradient(90deg, var(--text-bg));
+  -webkit-background-clip: text;
+  color: unset;
   margin: 0 0 0.2em;
   color: ${setLightness('0.05', colors.darkgrey)};
   @media (max-width: 500px) {
