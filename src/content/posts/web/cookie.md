@@ -13,26 +13,26 @@ keywords: [웹쿠키, cookie]
 - 주로 웹서버에 의해 생성되며 HTTP 응답의 `Set-Cookie` 헤더에 값을 지정하여 전달한다. 브라우저는 전달받은 `Set-Cookie` 값을 분석하여 사용자가 접속한 브라우저에 저장한다. (크롬을 사용하는 경우 개발자도구의 Application 탭에서 확인가능하다)
     - 브라우저별로 저장되기 때문에 크롬으로 특정 사이트에 접속하여 `Cookie` 를 발급받아도, safari에는 같은 사이트에 대한 `Cookie`가 존재하지 않는다.
 - `Cookie` 발급에는 다양한 옵션이 존재한다.
-    - **Expires=<date>**
+    - **Expires=\<date>**
         - HTTP 타임스탬프로 기록된 쿠키의 유효기간을 지정하고 해당 기간을 지나면 쿠키는 만료된다.
         - ex)
             - 팝업UI 기능중 “오늘 하루 보지 않기”를 구현해야하는 경우, 버튼 클릭시 `Cookie` 의 `Expires` 값을 금일 23:59:59로 지정한 후, 유저의 쿠키보유 여부로 분기처리를 하여 구현하면된다.
-    - **Max-Age=<number>**
+    - **Max-Age=\<number>**
         - `Cookie` 만료될 때 까지의 시간을 초단위로 지정한다. 만약 이 값을 0보다 같거나 작은 값으로 지정하면 해당 쿠키는 즉시 만료된다.
         - ex)
             - 만약 채팅을 구현한 웹앱에서 “N시간동안 알림받지 않기” 기능을 구현해야하는 경우 사용할 수 있을듯하다.
-    - **Domain=<domain-value>**
+    - **Domain=\<domain-value>**
         - 쿠키가 적용되어야 하는 호스트를 지정한다. 값을 따로 지정하지 않으면, 유저가 현재 접속한 URI를 기준으로 값이 지정된다. [과거 Cookie 설계](https://datatracker.ietf.org/doc/html/rfc2109)와 달리 도메인 선두에 존재하는 `.` 은 무시된다. 현재 버전의 쿠키는 도메인이 지정되면, 서브도메인은 항상 포함되어 허용된다.
             - ex)
                 - `google.com`에서 `Domain=goole.com`으로 발급한 쿠키는 `map.google.com` 이나 `mail.google.com`에서 접근가능하다. 하지만 `mail.google.com`에서 `Domain=mail.google.com` 으로 발급된 쿠키는 `google.com`에서 접근할 수 없다.
                 - `Domain=y.z.com` 으로 발급받은 쿠키는 `y.z.com`, `x.y.z.com`, `a.x.y.z.com` 에서도 적용될 수 있다.
-        - **<domain-value>**에대한 제한
+        - \<domain-value\>에대한 제한
             - 또한 보안상의 이유로 현재 리소스의 최상위 도메인과 하위 도메인만 설정이 가능하다. hangame.com은 payco.com 도메인을 가진 쿠키를 생성할 수 없다는 말이다.
-            - Cookie를 발급하는 서버는 자기자신 혹은 부모 domain으로만 **<domain-value>** 값으로 사용할 수 있다. `x.y.z.com` 서버는 `x.y.z.com`, `y.z.com`, `z.com` 은 가능하나 `x.a.z.com` 은 불가능하다. ([관련글](https://stackoverflow.com/questions/1062963/how-do-browser-cookie-domains-work))
+            - Cookie를 발급하는 서버는 자기자신 혹은 부모 domain으로만 \<domain-value\> 값으로 사용할 수 있다. `x.y.z.com` 서버는 `x.y.z.com`, `y.z.com`, `z.com` 은 가능하나 `x.a.z.com` 은 불가능하다. ([관련글](https://stackoverflow.com/questions/1062963/how-do-browser-cookie-domains-work))
             - 도메인에 [TLD](https://library.gabia.com/contents/domain/713/)를 지정할 수 없다. (.com, .kr 같은 목적이나 종류 또는 등록자가 소속되어 있는 국가를 나타내는 도메인)
         - ex)
             - 특정 플랫폼에서 로그인한 유저는 프로필정보를 노출시켜주고 싶을 경우, 로그인시 어떤 유저인지 정보를 담은 `Cookie`를 발급하면된다. 이후에 유저가 또 서버에 요청을 헤더에 `Cookie` 가 전달되게 되고, 어떤 유저인지 특정가능해진다.
-    - **Path=<path-value>**
+    - **Path=\<path-value>**
         - 이 쿠키에 접근할 수 있는 경로를 제한한다. 만약 `/docs` 라는 경로를 지정하면 그 하위인 `/docs/1` 이나 `/docs/js/1`등이 모두 해당된다. 특별한 경우가 아닌 경우 따로 지정하지 않으며 기본값은 `/`이다.
         - ex)
             - 유저 마이페이지의 url이 `/mypage`이며, 마이페이지에서만 필요한 `Cookie`를 생성해야할 경우
@@ -77,9 +77,9 @@ keywords: [웹쿠키, cookie]
 
 다음과 같이 getter를 통해 현재 접속한 URL에서 확인가능한 `Cookie`를 문자열로서 확인할 수 있다.
 
-```
-1console.log(document.cookie);
-2// cookie1=value1; cookie2=value2;...
+```javascript
+console.log(document.cookie);
+// cookie1=value1; cookie2=value2;...
 ```
 
 - 문자열은 `key=value` 형태로 구성되어 있고 `;`로 분리됩니다. 만약 특정한 이름을 가진 `Cookie`를 가져오고 싶은 경우 직접 함수를 구현해야한다. ([getCookie() 예시](https://ko.javascript.info/cookie#ref-250))
@@ -208,7 +208,7 @@ res.cookie('rememberme', '1', cookieOption);
     - `Strict`
         - 강하게 제한하는 정책으로 SameSite가 아니면 쿠키의 생성과 전달을 금지한다.
         - Set-Cookie Domain 의 registrable domain 과 브라우저 주소창 URI 의 registrable domain 이 정확하게 일치하고 scheme까지(https ==> https) 동일할 경우 SameSite 이다.
-            - **registrable domain** 은 **TLD + 1 레벨**의 ****도메인이다. (public suffix list에 포함되면 TLD이다)
+            - **registrable domain** 은 **TLD + 1 레벨**의 도메인이다. (public suffix list에 포함되면 TLD이다)
             - google.**com** => google.**com** 가능
             - example.**com** => google.**com** 불가능
             - me.**github.io** => you.**github.io** 불가능
