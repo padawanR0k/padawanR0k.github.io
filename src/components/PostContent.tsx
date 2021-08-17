@@ -28,10 +28,10 @@ const PostContent: React.FC<PostContentProps> = ({ htmlAst, toc, series, current
   return (
     <PostFullContent className="post-full-content">
       {series.totalCount ? <SeriesList {...series} currentSlug={currentSlug} /> : null}
-      <Toc __html={toc} />
 
       {/* TODO: this will apply the class when rehype-react is published https://github.com/rhysd/rehype-react/pull/11 */}
       <Ast className="post-content" ast={htmlAst} />
+      <Toc __html={toc} />
     </PostFullContent>
   );
 };
@@ -43,9 +43,14 @@ export const PostFullContent = styled.section`
   min-height: 230px;
   font-family: "Apple SD Gothic Neo", AppleSDGothicNeo, "Malgun Gothic", "맑은 고딕", 돋움, dotum, arial, sans-serif;
   font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 1.6em;
   background: #fff;
 
+  @media (min-width: 1340px) {
+        padding: 0 0px 6vw 150px;
+        display: flex;
+  }
   h1, h2, h3, h4, h5, h6 {
     &:hover {
       a.anchor.before {
@@ -486,7 +491,7 @@ export const PostFullContent = styled.section`
 
     code {
       color: #fff;
-      background: #000;
+      background: #494e58;
     }
 
     hr {

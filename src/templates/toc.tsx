@@ -19,7 +19,6 @@ const Toc: React.FC<{ __html: string }> = ({ __html }) => {
   }, []);
   return (
     <TocContainer className="toc_container">
-      <h2>Table Of Contents</h2>
       <div ref={tocEl} id="toc" dangerouslySetInnerHTML={{ __html }} />
     </TocContainer>
   );
@@ -31,15 +30,17 @@ const TocContainer = styled.div`
   @media (max-width: 767px) {
       display: none;
   }
+
 	position: sticky;
-    right: 0;
-    top: calc(64px + 16px);
-    height: 0px;
-    transform: translateX(110%);
+  top: calc(64px + 16px);
+  width: 300px;
+  align-self: flex-start;
 
 	ul {
+    border-radius: 10px;
+    padding-bottom: 15px;
 		li {
-			text-overflow: ellipsis;
+      text-overflow: ellipsis;
 			width: 200px;
 			white-space: nowrap;
 			overflow: hidden;
@@ -47,4 +48,10 @@ const TocContainer = styled.div`
 			white-space: normal;
 		}
 	}
+
+  @media (prefers-color-scheme: dark) {
+    ul {
+      background: #1a1c20;
+    }
+  }
 `;

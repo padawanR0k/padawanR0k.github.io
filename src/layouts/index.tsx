@@ -397,7 +397,7 @@ const IndexLayout: React.FC<IndexProps> = props => {
           blockquote p {
             margin: 0.8em 0;
             font-size: 1.2em;
-            font-weight: 300;
+            font-weight: 500;
           }
 
           blockquote small {
