@@ -6,7 +6,7 @@ tags: ["42seoul"]
 series: "born2beroot"
 order: 1
 layout: post
-image: ../../../img/42seoul_title.jpeg
+image: ../../../../img/42seoul_title.jpeg
 keywords: [42서울, 42seoul]
 ---
 
@@ -47,7 +47,7 @@ keywords: [42서울, 42seoul]
 
             `Xen, 마이크로소프트 Hyper-V, KVM`
 
-            ![img/Untitled.png](img/Untitled.png)
+            ![./img/Untitled.png](./img/Untitled.png)
 
             - 하이퍼바이저가 하드웨어를 직접 제어해서 효율적임
             - 여러 하드웨어 드라이버를 세팅해야해서 설치가 어려움
@@ -55,7 +55,7 @@ keywords: [42서울, 42seoul]
 
             `VMware server, VMware Workstation, Virtual box`
 
-            ![img/Untitled%201.png](img/Untitled%201.png)
+            ![./img/Untitled_1.png](./img/Untitled_1.png)
 
             - 일반적인 소프트웨어 처럼 호스트OS위에서 실행됨
             - VM내부의 게스트 OS에 하드웨어자원을 에뮬레이트하는 방식
@@ -63,7 +63,7 @@ keywords: [42서울, 42seoul]
 - 부가적인 지식
     - 컨테이너 방식의 가상화 Docker
 
-        ![img/Untitled%202.png](img/Untitled%202.png)
+        ![./img/Untitled_2.png](./img/Untitled_2.png)
 
         - 기존의 하이퍼바이저는 OS를 포함하고 있어 기능의 중복이 있고 상대적으로 무거웠음
         - 컨테이너 기반 가상화는 기능의 중복을 줄이고 가벼운 가상화를 위해 탄생함. 도커는 그중에 하나
@@ -88,7 +88,7 @@ keywords: [42서울, 42seoul]
 
 ### LVM (Logical Volume Manage)
 
-![img/Untitled%203.png](img/Untitled%203.png)
+![./img/Untitled_3.png](./img/Untitled_3.png)
 
 - 논리 볼륨 관리자
 - 물리적인 디스크를 논리적인 디스크로 할당하여 유연하게 관리할 수 있게해줌
@@ -122,7 +122,7 @@ keywords: [42서울, 42seoul]
 
     `ssh-keygen` 명령어를 사용해 한쌍의 key를 생성할 수 있다.
 
-    ![img/Untitled%204.png](img/Untitled%204.png)
+    ![./img/Untitled_4.png](./img/Untitled_4.png)
 
     1. 호스트 또는 클라이언트가 1개의 쌍을 가진 키를 가지고 있는 상태에서 연결
         1. `id_rsa.pub` (public key)
@@ -134,7 +134,7 @@ keywords: [42서울, 42seoul]
     6. 인증되었다면, 세션키 교환 (두개의 키로 한가지 결과가 나와야함)
 - SSH Tunneling (SSH Forwarding)
 
-    ![Untitled](img/Untitled%205.png)
+    ![Untitled](./img/Untitled_5.png)
 
     - Host B에 설치된 SSH 서버를 Host A의 SSH 클라이언트를 통해 접속했다. 이 렇게 둘 사이의 연결이 이루어지는 통로를 터널이라고 부르며 이런것을 터널링이라고 부른다.
     - 이렇게 생긴 SSH 터널은 다른 애플리케이션도 사용할 수 있는데, 이러한 것을가능하게 하는것이 포트포워딩이란 기술이다. [포트포워딩](https://lamanus.kr/59)은 패킷이 라우터나 방화벽을 지나는 동안 하나의 IP주소와 포트번호를 결합하여 특정 내부 네트워크에 전달해주는것을 말한다.
