@@ -249,8 +249,7 @@ const PageTemplate = (props: PageTemplateProps) => {
                 </PostFullImage>
               )}
 
-              <PostContent htmlAst={post.htmlAst} toc={post.tableOfContents} series={series} currentSlug={pageContext.slug} >
-              </PostContent>
+              <PostContent htmlAst={post.htmlAst} toc={post.tableOfContents} series={series} currentSlug={pageContext.slug} />
 
               {/* The big email subscribe modal content */}
               {config.showSubscribe && <Subscribe title={config.title} />}

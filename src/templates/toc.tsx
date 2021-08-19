@@ -49,9 +49,9 @@ const TocContainer = styled.div`
 		}
 	}
 
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     ul {
       background: #1a1c20;
     }
-  }
+  } */
 `;

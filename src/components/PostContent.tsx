@@ -27,10 +27,12 @@ export interface PostContentProps {
 const PostContent: React.FC<PostContentProps> = ({ htmlAst, toc, series, currentSlug}) => {
   return (
     <PostFullContent className="post-full-content">
-      {series.totalCount ? <SeriesList {...series} currentSlug={currentSlug} /> : null}
 
       {/* TODO: this will apply the class when rehype-react is published https://github.com/rhysd/rehype-react/pull/11 */}
-      <Ast className="post-content" ast={htmlAst} />
+      <article>
+        {series.totalCount ? <SeriesList {...series} currentSlug={currentSlug} /> : null}
+        <Ast className="post-content" ast={htmlAst} />
+      </article>
       <Toc __html={toc} />
     </PostFullContent>
   );
@@ -490,8 +492,11 @@ export const PostFullContent = styled.section`
     }
 
     code {
-      color: #fff;
-      background: #494e58;
+      color: #ff584c;
+      background: #333435;
+      padding-top: 2px;
+      padding-bottom: 3px;
+      border: none;
     }
 
     hr {
