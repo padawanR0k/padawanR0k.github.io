@@ -30,6 +30,9 @@ const TocContainer = styled.div`
   @media (max-width: 767px) {
       display: none;
   }
+  @media (max-width: 1339px) {
+    display: none;
+  }
 
 	position: sticky;
   top: calc(64px + 16px);
