@@ -29,14 +29,18 @@ const PostContent: React.FC<PostContentProps> = ({ htmlAst, toc, series, current
     <PostFullContent className="post-full-content">
 
       {/* TODO: this will apply the class when rehype-react is published https://github.com/rhysd/rehype-react/pull/11 */}
-      <article>
+      <Article>
         {series.totalCount ? <SeriesList {...series} currentSlug={currentSlug} /> : null}
         <Ast className="post-content" ast={htmlAst} />
-      </article>
+      </Article>
       <Toc __html={toc} />
     </PostFullContent>
   );
 };
+
+export const Article = styled.article`
+  max-width: 715px;
+`;
 
 export const PostFullContent = styled.section`
   position: relative;
@@ -348,14 +352,14 @@ export const PostFullContent = styled.section`
 
   h4 {
     margin: 0.5em 0 0.2em;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
   }
   h2 + h4 {
     margin-top: 0.7em;
   }
   h3 + h4 {
-    margin-top: 0;
+    margin-top: 0.7em;
   }
   @media (max-width: 800px) {
     h4 {
@@ -687,8 +691,6 @@ export const PostFullContent = styled.section`
   .gatsby-highlight-code-line {
     background-color: hsla(207, 95%, 15%, 1);
     display: block;
-    margin-right: -1.3125rem;
-    margin-left: -1.3125rem;
     padding-right: 1em;
     padding-left: 1.25em;
     border-left: 0.25em solid #ffa7c4;
@@ -696,8 +698,6 @@ export const PostFullContent = styled.section`
 
   .gatsby-highlight {
     margin-bottom: 1.75rem;
-    margin-left: -1.3125rem;
-    margin-right: -1.3125rem;
     border-radius: 10px;
     background: #011627;
     -webkit-overflow-scrolling: touch;

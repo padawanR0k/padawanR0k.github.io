@@ -4,7 +4,7 @@ title: typescript 환경에서 sequelize 사용하기
 date: 2021-08-30
 tags: ["javascript"]
 layout: post
-# image: ../../img/42seoul_title.jpeg
+image: ../../../img/sequelize.png
 keywords: [sequelize, orm]
 ---
 
@@ -14,6 +14,7 @@ keywords: [sequelize, orm]
 javascript에서 사용할 수 있는 ORM으로서 가장 대중적으로 사용되고 있음.
 
 ### 사용법 정리
+
 
 #### 설치
 ```
