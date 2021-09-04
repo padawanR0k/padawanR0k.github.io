@@ -254,9 +254,7 @@ const PageTemplate = (props: PageTemplateProps) => {
               {/* The big email subscribe modal content */}
               {config.showSubscribe && <Subscribe title={config.title} />}
 
-              <Comments
-                slug={post.fields.slug}
-                title={post.frontmatter.title} />
+              <Comments repo="padawanr0k/padawanr0k.github.io" theme="github-light" />
             </article>
           </div>
         </main>

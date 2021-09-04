@@ -1,28 +1,38 @@
-import React, { FunctionComponent } from "react";
-// import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
-const { Disqus, CommentCount } = require('gatsby-plugin-disqus');
-import config from '../website-config';
-/**
- * Placeholder which is attached under every post. Can be shadowed to
- * quickly integrate comments (like commento, Disqus, ...).
- */
-// @ts-ignore
-const Comments: FunctionComponent<{ slug: string, title: string }> = ({ title, slug }) => {
-	let disqusConfig = {
-		identifier: title,
-		// shortname: config.disqusShortname,
-		config: {
-			url: `${config.siteUrl + slug }`,
-			identifier: slug,
-			title,
-		},
-	}
-	return (
-		<>
-			<CommentCount config={disqusConfig} placeholder={'...'} />
-			<Disqus config={disqusConfig} />
-		</>
-	)
-};
+import React, { createRef, useLayoutEffect } from 'react';
+
+const src = 'https://utteranc.es/client.js';
+
+export interface IUtterancesProps {
+  repo: string;
+  theme: string;
+}
+
+const Comments: React.FC<IUtterancesProps> = React.memo(({ repo, theme }) => {
+  const containerRef = createRef<HTMLDivElement>();
+
+  useLayoutEffect(() => {
+    const utterances = document.createElement('script');
+
+    const attributes = {
+      src,
+      repo,
+      theme,
+      'issue-term': 'pathname',
+      label: '✨💬 comments ✨',
+      crossOrigin: 'anonymous',
+      async: 'true',
+    };
+
+    Object.entries(attributes).forEach(([key, value]) => {
+      utterances.setAttribute(key, value);
+    });
+
+    containerRef.current!.appendChild(utterances);
+  }, [repo]);
+
+  return <div ref={containerRef} />;
+});
+
+Comments.displayName = 'Utterances';
 
 export default Comments;
