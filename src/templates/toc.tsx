@@ -41,7 +41,8 @@ const TocContainer = styled.div`
 
 	ul {
     border-radius: 10px;
-    padding-bottom: 15px;
+    padding-bottom: 0px;
+    margin: 0;
 		li {
       text-overflow: ellipsis;
 			width: 200px;
