@@ -28,3 +28,6 @@
 - id: web
   description: "웹"
   image: img/speeches-cover.jpg
+- id: cloud
+  description: "cloud"
+  image: img/speeches-cover.jpg
