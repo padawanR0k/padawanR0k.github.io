@@ -4,7 +4,7 @@ title: 이메일 템플릿 작업시 미리알면 좋은 것들
 date: 2021-11-28
 tags: ["etc"]
 layout: post
-image: ../../img/email.jepg
+image: ../../img/email.jpeg
 keywords: [이메일 템플릿]
 ---
 
