@@ -139,7 +139,7 @@ exports.createPages = async ({ graphql, actions }) => {
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? '/' : `/${i + 1}`,
-      component: path.resolve('./src/templates/index.tsx'),
+      component: path.resolve(__dirname + '/src/templates/index.tsx'),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,

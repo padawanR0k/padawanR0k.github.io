@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: 'r0k\'s l0g',
     description: 'dev blog',
-    siteUrl: 'https://padawanr0k.github.io', // full path to blog - no ending slash
+    siteUrl: 'https://blog.r0k.wiki', // full path to blog - no ending slash
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': 'AuthorYaml',
@@ -157,7 +157,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://padawanr0k.github.io',
+        siteUrl: 'https://blog.r0k.wiki',
       },
     },
     'gatsby-plugin-typescript',
