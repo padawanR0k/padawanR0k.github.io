@@ -25,7 +25,7 @@ keywords: [42서울, 42seoul]
 11. 나라 설정
     1. other - asia - 한국 찾아서 선택
 12. lvm 설정
-    1. 비밀번호 Dgjl1541213!!
+    1. 비밀번호 설정
 13. 데비안 아카이브 미러 선택 - 한국 - deb.debian.org
 14. HTTP proxy 비움
 15. configuring popularity-contest - no
