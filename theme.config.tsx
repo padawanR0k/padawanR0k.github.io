@@ -10,7 +10,7 @@ const config: DocsThemeConfig = {
   // chat: {
   //   link: 'https://discord.com',
   // },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://github.com/padawanr0k/padawanr0k.github.io/tree/main/docs',
   // footer: {
   //   text: 'Nextra Docs Template',
   // },
