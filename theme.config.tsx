@@ -28,6 +28,7 @@ const config: DocsThemeConfig = {
     return <>
       {children}
       <Comments />
+      <meta name="google-site-verification" content="D2ge0ulWTiD8wQwrjWMg2yHjlWX3t_6Fj8GiYRJBIsY" />
     </>
   }
 }
