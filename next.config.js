@@ -3,9 +3,18 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.tsx',
 })
 
-module.exports = withNextra({
-  images: {
-    unoptimized: true,
-  },
+const withExportImages = require('next-export-optimize-images')
+const imageOptimize = withExportImages({
   output: 'export'
-})
+});
+
+// console.log('imageOptimize', imageOptimize);
+// console.log('asd', withNextra({
+//     images: {
+//         unoptimized: true,
+//     },
+// }));
+module.exports =
+    withExportImages(withNextra({
+        output: 'standalone',
+    }))

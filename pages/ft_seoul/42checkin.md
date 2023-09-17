@@ -38,17 +38,17 @@ JIRA에 큰 방향과 목적을 적어놓은 Epic 이슈를 멘토님이 먼저 
 
 처음에는 이슈를 어떻게 작성해야할지 몰라서 간단하게 큰 덩어리로 작성했다. 그러다 보니 어느 이슈만 보고 어떻게 진행되는지 알기 어려운 상태가 되었고, 멘토님은 이슈는 작은 작업 단위로 나누어져야 하며, 각 커밋메세지는 어떤 이슈로 인해 작업이 되었는지 남겨서 누가 봐도 이 프로젝트가 어떻게 돌아가고 있는지, 누가 무엇을 작업하고 있는지, 문제는 무엇인지 한눈에 알기 쉬워야한다고 조언을 해주셨다.
 
-![https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154131.png?resize=616%2C427&ssl=1](https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154131.png?resize=616%2C427&ssl=1)
+<Image src="https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154131.png?resize=616%2C427&ssl=1" alt="https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154131.png?resize=616%2C427&ssl=1" />
 *멘토님이 작성한 Epic 이슈*
 
-![https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154236.png?resize=616%2C236&ssl=1](https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154236.png?resize=616%2C236&ssl=1)
+<Image src="https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154236.png?resize=616%2C236&ssl=1" alt="https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154236.png?resize=616%2C236&ssl=1" />
 *Epic 이슈를 달성하기 위한 하위 이슈들 (backend)*
 
-![https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154249.png?resize=616%2C189&ssl=1](https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154249.png?resize=616%2C189&ssl=1)
+<Image src="https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154249.png?resize=616%2C189&ssl=1" alt="https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154249.png?resize=616%2C189&ssl=1" />
 *Epic 이슈를 달성하기 위한 하위 이슈들 (frontend)*
 
 
-![https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154400.png?resize=616%2C557&ssl=1](https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154400.png?resize=616%2C557&ssl=1)
+<Image src="https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154400.png?resize=616%2C557&ssl=1" alt="https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-154400.png?resize=616%2C557&ssl=1" />
 *각 이슈를 클릭하면 상세내용을 볼 수 있고 해당 이슈에 대해 커뮤니케이션할 수 있는 환경이 구성되어있다.*
 
 ### 똑똑한 커밋메시지 남기기
@@ -61,7 +61,7 @@ JIRA에 큰 방향과 목적을 적어놓은 Epic 이슈를 멘토님이 먼저 
   - COMMAND
       - 이슈에 대한 상태를 업데이트할 수 있는 옵션이다. 이슈는 OPEN, IN PROGRESS, RESOLVED, CLOSED가 있다. 이 옵션을 사용하면 커밋에 대한 설명이아닌, JIRA에 대한 상태변화를 메세지에 나타내기 때문에 [좋은 git 커밋 메시지를 작성하기 위한 7가지 약속](https://meetup.toast.com/posts/106)을 지키지 못한다. 이 옵션에 대한 사용은 팀원간의 논의 후에 사용하는것이 좋을것같다.
 
-![https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-034247.png?resize=616%2C367&ssl=1](https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-034247.png?resize=616%2C367&ssl=1)
+<Image src="https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-034247.png?resize=616%2C367&ssl=1" alt="https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-034247.png?resize=616%2C367&ssl=1" />
 *이슈카드와 연결된 커밋이 해당 영역에 보여진다.*
 
 
@@ -69,7 +69,7 @@ JIRA에 큰 방향과 목적을 적어놓은 Epic 이슈를 멘토님이 먼저 
 
 bitbucket에서는 같은 workspace를 사용하는 유저의 코드에 file또는 line별로 커밋메시지를 남길 수 있는 기능이 있다. 이 기능을 활용해 작성한 코드들에 대해 리뷰어에게 피드백을 받을 수 있다.
 
-![https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-155621.png?resize=616%2C334&ssl=1](https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-155621.png?resize=616%2C334&ssl=1)
+<Image src="https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-155621.png?resize=616%2C334&ssl=1" alt="https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210702-155621.png?resize=616%2C334&ssl=1" />
 *내가 작성한 코드는 '이 변수는 이렇게 꼭 전달되어야만해'라는 방식의 코드였다. 이 부분에 대해 더 강한 예외처리를 하라고 조언을 해주셨다.*
 
 
@@ -151,7 +151,7 @@ bitbucket에서는 같은 workspace를 사용하는 유저의 코드에 file또�
     2. Viewer Protocol Policy 는 rediect HTTP to HTTPS를 선택한다. 일부 라이브러리나 프로토콜 같은 경우에는 보안 상의 이유로 HTTPS 환경에서만 동작하게 하는 경우가 있기 때문이다.
     3. Default Root Object 는 index.html로 설정한다. url로 접근했을때 서빙해줄 파일을 지정한다.
     4. 배포가 되는 동안 해당 cloudfront distribution의 Error Pages 탭의 Create Custom Error Response 를 설정해준다.
-      ![https://i1.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210705-144202-1.png?resize=616%2C396&ssl=1](https://i1.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210705-144202-1.png?resize=616%2C396&ssl=1)
+      <Image src="https://i1.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210705-144202-1.png?resize=616%2C396&ssl=1" alt="https://i1.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210705-144202-1.png?resize=616%2C396&ssl=1" />
       1. 403 Forbidden, 404 Not Found 에러를 200 OK로 응답하게끔 수정한다. 해당 설정을 하지 않고 react상에서 react-router-dom을 사용해 url을 변경하게되면 cloudfront에 해당 URL의 GET 요청을 보내게되고 없는 파일에 접근시에 오류발생하게된다.
         1. 만약 별다른 설정없이 [https://example.com/checkin/1 에](https://example.com/checkin/1%EC%97%90) 접근하게되면 해당 cloudfront와 연결된 S3버킷 내부의 checkin 폴더 하위에 존재하는 1이라는 파일을 찾게되고 에러가 발생한다.
     5. 이상이 없는지 확인한다.
@@ -198,9 +198,9 @@ bitbucket에서는 같은 workspace를 사용하는 유저의 코드에 file또�
 
 배포가 완료된날 아침. 클러스터로 출근을 하고 있었는데 데스크를 관리하시는분에게서 슬랙DM이 와 있었다.
 
-![https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-045956.png?resize=504%2C94&ssl=1](https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-045956.png?resize=504%2C94&ssl=1)
+<Image src="https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-045956.png?resize=504%2C94&ssl=1" alt="https://i2.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-045956.png?resize=504%2C94&ssl=1" />
 
-![https://i1.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-045930.png?resize=616%2C325&ssl=1](https://i1.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-045930.png?resize=616%2C325&ssl=1)
+<Image src="https://i1.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-045930.png?resize=616%2C325&ssl=1" alt="https://i1.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/07/image-20210703-045930.png?resize=616%2C325&ssl=1" />
 *카뎃들이 봤었던 404화면*
 
 다행히도 이 부분은 쉽게 원인을 파악할 수 있었다.

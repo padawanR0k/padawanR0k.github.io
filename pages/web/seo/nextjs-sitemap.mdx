@@ -8,6 +8,8 @@ image: next-sitemap.webp
 created: 2022-11-09T11:28:03+09:00
 ---
 
+import Image from 'next/image';
+
 ## 목표
 - 기존에 next router들에 대한 정보만 존재하던 간단한 sitemap에 상세페이지들에 대한 정보를 추가한다.
 - SEO가 개선되어야할 페이지로 접근시 url에 서치키워드를 추가하여 리다이렉션 한다.
@@ -96,7 +98,7 @@ export default SitemapXML;
 
 이제 `/server-sitemap.xml`에 접근하면 다음과 같이 사이트맵이 생성된걸 확인할 수 있습니다.
 
-![sitemap01.png](./img/sitemap01.png)
+<Image  src="/img/sitemap01.png" alt="sitemap01.png"  width="640" height="320" />
 
 
 
@@ -148,12 +150,12 @@ if (needRedirect) {
 
 이제 SEO를 위한 suffix가 적용되지 않은 URL로 접근시, destination으로 지정한 URL로 리다이렉션됩니다. 크롬 개발자도구를 열어 network탭을 확인하면, 아래처럼 status code가 바뀌어 있는걸 확인하실 수 있습니다.
 
-![redirection_308.png](./img/redirection_308.png)
+<Image width="640" height="320"  src="/img/redirection_308.png" alt="redirection_308.png" />
 
 
 #### 상태코드로 308을 쓰는 이유
 
-![308-Permanent-Redirect.png](./img/308-Permanent-Redirect.png)
+<Image width="640" height="320" src="/img/308-Permanent-Redirect.png" alt="308-Permanent-Redirect.png" />
 
 
 

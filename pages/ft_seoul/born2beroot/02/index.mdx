@@ -10,6 +10,8 @@ image: ../../../../img/42seoul_title.jpeg
 keywords: [42서울, 42seoul]
 ---
 
+import Image from 'next/image';
+
 ## 과정 하나씩  정리하기
 
 1. 이미지 iso파일 다운하기 ([링크](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/))
@@ -57,7 +59,7 @@ keywords: [42서울, 42seoul]
             - `-aG` 특정 그룹에 유저를 넣는다.
         - `sudo  - {이름}` 으로 새로 만든 사용자로 전환후 `sudo whoami` 로 root 가 뜨는지 확인
 
-            ![Untitled](./img/Untitled.png)
+            <Image width="640" height="320" src="/img/b2r.png" alt="b2r" />
 
     3. [리눅스 그룹 생성/삭제/확인/추가 - groupadd](https://webdir.tistory.com/134)
         - `groupadd 그룹명`
@@ -141,12 +143,12 @@ keywords: [42서울, 42seoul]
             - 권한 획득 실패 시 출력하는 메세지이다.
             - ctrl+c
 
-                ![./img/Untitled_1.png](./img/Untitled_1.png)
+                <Image width="640" height="320" src="/img/b2r_1.png" alt="./img/b2r_1.png" />
 
         - `badpass_message`
             - sudo사용시 에러가 발생하게되면 나오는 메세지를 커스터마이징할 메세지
 
-            ![./img/Untitled_2.png](./img/Untitled_2.png)
+            <Image width="640" height="320" src="/img/b2r_2.png" alt="./img/b2r_2.png" />
 
         - `log_input`, `log_output`
             - sudo 명령어 실행시 입력 명령어, 출력 결과를 로그로 저장
@@ -279,9 +281,9 @@ keywords: [42서울, 42seoul]
                     - `$2, $3` 표현은?
                         - awk에서 매칭된 정보들을 컬럼형식으로 가져올수 있는데, 그때 사용하는 필드
 
-                            ![./img/Untitled_3.png](./img/Untitled_3.png)
+                            <Image width="640" height="320" src="/img/b2r_3.png" alt="./img/b2r_3.png" />
 
-                            ![./img/Untitled_4.png](./img/Untitled_4.png)
+                            <Image width="640" height="320" src="/img/b2r_4.png" alt="./img/b2r_4.png" />
 
         - 사용가능한 메모리 용량과 이를 %로 표현 ([df 명령어 링크](https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%A0%84%EC%B2%B4_%EB%94%94%EC%8A%A4%ED%81%AC_%EC%82%AC%EC%9A%A9%EB%9F%89_%ED%99%95%EC%9D%B8))
             - 남은용량
@@ -424,7 +426,7 @@ keywords: [42서울, 42seoul]
 - 피평가자에게 어떻게 이 가상머신의 파티션들을 볼 수 있는지 물어봐라
     - `lsblk`
 
-        ![Untitled](./img/Untitled_5.png)
+        <Image width="640" height="320" src="/img/b2r_5.png" alt="b2r" />
 
 - 과제에서 주어진 예제와 비교해라. 주의: 만약  피평가자가 보너스를 진행하는 경우 보너스의 예제를 무조건 참고해야함
 - 이 파트는 점수를 위해 토론할 기회다? 피평가자는 LVM이 뭔지 어떻게 작동하는지 만족할만한 설명을해야한다. 아니면 평가 중단해라
