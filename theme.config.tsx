@@ -1,6 +1,7 @@
 import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
-import { useRouter } from 'next/router'
+import {DocsThemeConfig} from 'nextra-theme-docs'
+import {useRouter} from 'next/router'
+import Comments from './components/Comments';
 
 const config: DocsThemeConfig = {
   logo: <h1>R0k's log</h1>,
@@ -11,6 +12,7 @@ const config: DocsThemeConfig = {
   //   link: 'https://discord.com',
   // },
   docsRepositoryBase: 'https://github.com/padawanr0k/padawanr0k.github.io/tree/main/docs',
+
   // footer: {
   //   text: 'Nextra Docs Template',
   // },
@@ -21,6 +23,12 @@ const config: DocsThemeConfig = {
         titleTemplate: `%s – R0k's log`
       }
     }
+  },
+  main: ({ children }) => {
+    return <>
+      {children}
+      <Comments />
+    </>
   }
 }
 
