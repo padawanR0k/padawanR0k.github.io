@@ -16,7 +16,9 @@ import Image from 'next/image';
 3. 왜 오류가 발생했고 제대로 수정하려면 어떡해야할까? 를 정리했다.
 
 ### **Cookie로 로그인여부 판단하기**
-![](../../public/img/login_seq.png)
+
+<Image width="640" height="320" src="/img/login_seq.png" alt="체크인 로그인 시퀀스 다이어그램" />
+
 현재 체크인 서비스는 유저의 로그인여부를 판단하기 위해 Cookie를 사용하고 있습니다. 유저가 로그인 버튼을 누르면 42인트라넷으로 이동하여 로그인을 마친 후, 체크인 API서버로 리다이렉트됩니다. 이 때 체크인 API서버는 Cookie를 발급하여, 유저의 브라우저에 쿠키를 남기게 됩니다. frontend에서는 그 Cookie를 확인하여 로그인한 사람만 특정페이지에 접근 가능하게 만들었습니다. 아닌 경우에는 메인화면으로 돌려보내게됩니다.
 
 ### **근데 웹에서 Cookie는 어떤거죠?**
@@ -64,7 +66,8 @@ prod환경은 client URL(`http://cluster.42seoul.io`)이 server URL(`https://api
 ### **Cookie를 다양하게 다뤄보며 테스트해보자**
 
 - Cookie를 발급받을 때 frontend에서 옵션을 원하는대로 설정할 수 있는 [간단한 프로젝트](https://github.com/padawanR0k/cookie-tester)를 구성했습니다. 해당 프로젝트는 각각 [checkintest.42cadet.kr](http://checkintest.42cadet.kr/)(client), [api.checkintest.42cadet.kr](http://api.checkintest.42cadet.kr/)(server)에 배포했습니다. 현재는 내려간 상태입니다.
-![](../../public/img/cookie_tester.png)
+
+<Image src="/img/cookie_tester.png" alt="쿠키테스터" width="640" height="320" />
 테스터의 client는 위와같이 생겼습니다. 좌측 UI에서 필요한 설정들을 지정한 후 send버튼을 누르게 되면 해당 설정들이 테스터 server로 보내지게됩니다. 우측에는 접속한 host에서 볼 수 있는 Cookie들을 보여줍니다.
 
 
