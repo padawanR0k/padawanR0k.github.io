@@ -2,11 +2,15 @@ import * as gtag from '../lib/gtag'
 import './styles.css'
 import {Fragment} from "react";
 import Script from 'next/script';
+import Head from 'next/head';
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
   gtag.useGtag();
   return <Fragment>
+    <Head>
+      <link rel="stylesheet" type="text/css" href='https://blog.r0k.wiki/pretendard-subset.css'/>
+    </Head>
     <Component {...pageProps} />
     {process.env.NODE_ENV !== 'development' && (
         <>
