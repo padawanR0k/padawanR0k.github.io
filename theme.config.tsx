@@ -1,5 +1,5 @@
 import React from 'react'
-import {DocsThemeConfig} from 'nextra-theme-docs'
+import {DocsThemeConfig, useConfig} from 'nextra-theme-docs'
 import {useRouter} from 'next/router'
 import Comments from './components/Comments';
 
@@ -17,12 +17,20 @@ const config: DocsThemeConfig = {
   //   text: 'Nextra Docs Template',
   // },
   useNextSeoProps() {
-    const { asPath } = useRouter()
+    const { asPath, pathname } = useRouter()
     if (asPath !== '/') {
       return {
-        titleTemplate: `%s – R0k's log`
+        titleTemplate: `%s – R0k's log`,
       }
     }
+  },
+  head: () => {
+    const head = useConfig()
+    // const { pathname } = head.useNextSeoProps()
+    console.log(head.title);
+    return <>
+      <meta property={'og:image'} content={`http://localhost:3000/api/open-graph/slug.png?title=${head.title}`} />
+    </>;
   },
   main: ({ children }) => {
     return <>

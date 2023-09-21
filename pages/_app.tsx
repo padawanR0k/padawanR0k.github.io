@@ -4,6 +4,7 @@ import {Fragment} from "react";
 import Script from 'next/script';
 import Head from 'next/head';
 
+
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
   gtag.useGtag();

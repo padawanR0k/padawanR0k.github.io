@@ -16,5 +16,5 @@ const imageOptimize = withExportImages({
 // }));
 module.exports =
     withExportImages(withNextra({
-        output: 'standalone',
+        output: 'export',
     }))
