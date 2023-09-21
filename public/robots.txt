@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://blog.r0k.wiki
+
+# Sitemaps
+Sitemap: https://blog.r0k.wiki/sitemap.xml

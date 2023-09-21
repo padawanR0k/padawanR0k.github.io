@@ -7,9 +7,6 @@ node_modules
 # Node.js-Specific Ignores
 # =========================
 
-# Build directory
-public/
-
 # Gatsby cache
 .cache/
 
