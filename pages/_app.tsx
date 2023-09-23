@@ -11,6 +11,7 @@ export default function MyApp({ Component, pageProps }) {
   return <Fragment>
     <Head>
       <link rel="stylesheet" type="text/css" href='https://blog.r0k.wiki/pretendard-subset.css'/>
+      <meta name="google-site-verification" content="D2ge0ulWTiD8wQwrjWMg2yHjlWX3t_6Fj8GiYRJBIsY" />
     </Head>
     <Component {...pageProps} />
     {process.env.NODE_ENV !== 'development' && (
