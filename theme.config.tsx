@@ -2,6 +2,8 @@ import React from 'react'
 import {DocsThemeConfig, useConfig} from 'nextra-theme-docs'
 import {useRouter} from 'next/router'
 import Comments from './components/Comments';
+import { generateOgImage } from './open-graph/slug.png';
+import {arrr} from "./scripts/generate";
 
 const config: DocsThemeConfig = {
   logo: <h1>R0k's log</h1>,
@@ -28,8 +30,10 @@ const config: DocsThemeConfig = {
     const head = useConfig()
     // const { pathname } = head.useNextSeoProps()
     console.log(head.title);
+    arrr.push(head.title)
+    const filename= encodeURIComponent(head.title)
     return <>
-      <meta property={'og:image'} content={`http://localhost:3000/api/open-graph/slug.png?title=${head.title}`} />
+      <meta property={'og:image'} content={`http://localhost:3000/${filename}.png`} />
     </>;
   },
   main: ({ children }) => {
