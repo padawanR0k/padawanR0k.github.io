@@ -29,7 +29,7 @@ const config: DocsThemeConfig = {
     const seperated = seoProps.pathname.split('/').slice(1);
     const thumbnailPath = seperated.join('-');
 
-    return <meta property={'og:image'} content={`/thumbnail/${thumbnailPath}.png`} />;
+    return <meta property={'og:image'} content={`https://r0k.blog.wiki/thumbnail/${thumbnailPath}.png`} />;
   },
   main: ({ children }) => {
     return <>
