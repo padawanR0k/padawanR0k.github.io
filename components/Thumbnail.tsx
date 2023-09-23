@@ -1,6 +1,5 @@
 export interface OgData {
   title: string;
-  date: Date;
 }
 
 export const Thumbnail = (props: OgData) => (
@@ -9,6 +8,7 @@ export const Thumbnail = (props: OgData) => (
           height: "100%",
           width: "100%",
           display: "flex",
+          fontFamily: "Pretendard-Bold",
           backgroundColor: "white",
           backgroundImage:
               "radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)",
@@ -60,15 +60,8 @@ export const Thumbnail = (props: OgData) => (
                 alignItems: "center",
               }}
           >
-            <div>
-              {props.date.toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </div>
             <div style={{ display: "flex", alignItems: "center" }}>
-              <span style={{ marginRight: "16px" }}>Jafar Aziz</span>
+              <span style={{ marginRight: "16px" }}>- R0K -</span>
             </div>
           </div>
         </div>

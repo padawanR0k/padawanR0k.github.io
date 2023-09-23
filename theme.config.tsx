@@ -14,16 +14,22 @@ const config: DocsThemeConfig = {
     if (asPath !== '/') {
       return {
         titleTemplate: `%s – R0k's log`,
+        pathname,
       }
     }
   },
   head: () => {
-    const head = useConfig()
-    console.log(head.title);
-    const filename= encodeURIComponent(head.title)
-    return <>
-      <meta property={'og:image'} content={`http://localhost:3000/${filename}.png`} />
-    </>;
+    const head = useConfig();
+    const seoProps = head.useNextSeoProps() as unknown as { titleTemplate: string, pathname: string };
+
+    if (!seoProps?.pathname) {
+      return;
+    }
+
+    const seperated = seoProps.pathname.split('/').slice(1);
+    const thumbnailPath = seperated.join('-');
+
+    return <meta property={'og:image'} content={`/thumbnail/${thumbnailPath}.png`} />;
   },
   main: ({ children }) => {
     return <>
