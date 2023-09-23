@@ -8,13 +8,7 @@ const imageOptimize = withExportImages({
   output: 'export'
 });
 
-// console.log('imageOptimize', imageOptimize);
-// console.log('asd', withNextra({
-//     images: {
-//         unoptimized: true,
-//     },
-// }));
 module.exports =
     withExportImages(withNextra({
-        output: 'standalone',
+        output: 'export',
     }))

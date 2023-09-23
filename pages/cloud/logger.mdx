@@ -8,6 +8,9 @@ image: ../../../img/log.png
 keywords: [node.js, 로그, cls-tracer]
 ---
 
+import Image from 'next/image';
+
+
 ## 서비스에서 로그란?
 
 - **로그**는 프로그램에서 발생하는 이벤트에 대한 기록이다.
@@ -197,7 +200,7 @@ async checkIn(req, res, next) {
 ```
 
 이런식으로 로그에 UUID를 남기면 추적하기 더 편하다.
-<img src="https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/08/log.png?ssl=1" style="width:100%">
+<Image width="640" height="320" src="https://i0.wp.com/42place.innovationacademy.kr/wp-content/uploads/2021/08/log.png?ssl=1" />
 
 같은 API를 두번 호출했을때 남겨진 로그의 예시이다. 서로 다른 파일에서 로그를 남기는 함수가 호출됐지만 같은 UUID를 확인할 수 있다. 또한 첫번째 호출되었을 때와 두번재 호출되었을 때의 UUID가 다른걸 확인할 수 있다.
 

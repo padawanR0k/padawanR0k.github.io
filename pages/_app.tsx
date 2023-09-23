@@ -4,12 +4,14 @@ import {Fragment} from "react";
 import Script from 'next/script';
 import Head from 'next/head';
 
+
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
   gtag.useGtag();
   return <Fragment>
     <Head>
       <link rel="stylesheet" type="text/css" href='https://blog.r0k.wiki/pretendard-subset.css'/>
+      <meta name="google-site-verification" content="D2ge0ulWTiD8wQwrjWMg2yHjlWX3t_6Fj8GiYRJBIsY" />
     </Head>
     <Component {...pageProps} />
     {process.env.NODE_ENV !== 'development' && (
