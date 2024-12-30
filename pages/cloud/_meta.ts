@@ -1,4 +1,4 @@
-{
+export default {
   "elb": {
     "title": "CloundFront + ALB 접근제어하기"
   },
