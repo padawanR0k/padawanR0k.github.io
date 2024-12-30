@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
-module.exports = {
+export default {
     siteUrl: 'https://blog.r0k.wiki',
     changefreq: 'daily',
     priority: 0.7,

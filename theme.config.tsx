@@ -1,6 +1,5 @@
 import React from 'react'
-import { DocsThemeConfig, useThemeConfig } from 'nextra-theme-docs'
-import {useRouter} from 'next/router'
+import type { DocsThemeConfig } from 'nextra-theme-docs'
 import Comments from './components/Comments';
 
 const config: DocsThemeConfig = {
@@ -18,23 +17,23 @@ const config: DocsThemeConfig = {
   //     }
   //   }
   // },
-  head: () => {
-    // const { head } = useThemeConfig();
-    // const seoProps = head() as unknown as { titleTemplate: string, pathname: string };
+  // head: () => {
+  //   const { head } = useThemeConfig();
+  //   const seoProps = head() as unknown as { titleTemplate: string, pathname: string };
 
-    // console.log('head')
-    // console.log(head())
-    // console.log('seoProps')
-    // console.log(seoProps)
-    // if (!seoProps?.pathname) {
-    //   return;
-    // }
+  //   console.log('head')
+  //   console.log(head())
+  //   console.log('seoProps')
+  //   console.log(seoProps)
+  //   if (!seoProps?.pathname) {
+  //     return;
+  //   }
 
-    // const seperated = seoProps.pathname.split('/').slice(1);
-    // const thumbnailPath = seperated.join('-');
+  //   const seperated = seoProps.pathname.split('/').slice(1);
+  //   const thumbnailPath = seperated.join('-');
 
-    // return <meta property={'og:image'} content={`https://r0k.blog.wiki/thumbnail/${thumbnailPath}.png`} />;
-  },
+  //   return <meta property={'og:image'} content={`https://r0k.blog.wiki/thumbnail/${thumbnailPath}.png`} />;
+  // },
   main: ({ children }) => {
     return <>
       {children}
