@@ -1,12 +1,12 @@
-import * as fs from 'fs';
-import satori, { SatoriOptions } from "satori";
+import * as fs from 'node:fs';
+import satori, { type SatoriOptions } from "satori";
 import { Transformer } from "@napi-rs/image";
-import {promises} from "fs";
-import * as path from 'path';
+import { promises } from "node:fs";
+import * as path from 'node:path';
 import * as glob from 'glob';
 import matter from 'gray-matter';
 import { Thumbnail } from './components/Thumbnail';
-import {readFile} from "fs/promises";
+import { readFile } from "node:fs/promises";
 
 interface PageInfo {
     path: string;

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -19,15 +19,17 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "next.config.mjs"
+    "next.config.mjs",
+    "./pre-deploy.tsx"
   ],
   "exclude": ["node_modules"],
   "ts-node": {
+    "swc": true,
     "files": true,
     "compilerOptions": {
-      "module": "commonjs",
-      "esModuleInterop": true,
-      "jsx": "react-jsx"
+      "module": "ESNext",
+      "moduleResolution": "NodeNext",
+      "jsx": "react"
     }
   }
 }
