@@ -73,7 +73,9 @@ const config: DocsThemeConfig = {
         </>
     )
   },
-  footer: () => null
+  footer: {
+    content: ''
+  }
 }
 
 export default config
