@@ -4,10 +4,10 @@
   "description": "Nextra docs template",
   "type": "module",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "pre-deploy": "ts-node --swc pre-deploy.tsx",
     "generate-sitemap": "next-sitemap --config ./next-sitemap.config.mjs",
-    "build": "pnpm generate-sitemap && next build  && next-export-optimize-images",
+    "build": "pnpm generate-sitemap && next build --turbopack && next-export-optimize-images",
     "start": "next start"
   },
   "repository": {

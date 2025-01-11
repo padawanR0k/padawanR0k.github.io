@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
-export default {
+export const blogConfig = {
     siteUrl: 'https://blog.r0k.wiki',
     changefreq: 'daily',
     priority: 0.7,
@@ -7,3 +7,5 @@ export default {
     generateRobotsTxt: true,
     exclude: [],
 };
+
+export default blogConfig;

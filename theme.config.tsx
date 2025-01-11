@@ -1,6 +1,8 @@
 import React from 'react'
-import type { DocsThemeConfig } from 'nextra-theme-docs'
+import {DocsThemeConfig, useConfig} from 'nextra-theme-docs'
 import Comments from './components/Comments';
+import {useRouter} from "next/router";
+import blogConfig from "./next-sitemap.config.mjs";
 
 const config: DocsThemeConfig = {
   logo: <h1>R0k's log</h1>,
@@ -39,7 +41,39 @@ const config: DocsThemeConfig = {
       {children}
       <Comments />
     </>
-  }
+  },
+  head: (props) =>{
+    const {asPath} = useRouter()
+    const config = useConfig()
+
+    const pageTitle = config.frontMatter.title || config.title
+
+    const siteTitle = "R0k's Log"
+    const title = pageTitle ? `${pageTitle} – ${siteTitle}` : siteTitle
+
+    const url = `${blogConfig.siteUrl}${asPath}`
+    const description =
+        "A code generation tool for openapi 3 / 3.1, and typespec specifications, " +
+        "primarily aimed at generating typescript client SDKs, and server stubs, " +
+        "with an emphasis on compile & runtime safety."
+
+    // {/*<meta property="og:image" content="/opengraph_image.jpeg" />*/}
+    return (
+        <>
+          <title>{title}</title>
+          <meta name="robots" content="index,follow" />
+          <meta name="description" content={description} />
+
+          <meta property="og:title" content={pageTitle} />
+          <meta property="og:site_name" content={siteTitle} />
+          <meta property="og:description" content={description} />
+          <meta property="og:url" content={url} />
+
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        </>
+    )
+  },
+  footer: () => null
 }
 
 export default config
