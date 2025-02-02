@@ -55,3 +55,5 @@ async function identifyImageType(file: Blob): Promise<string> {
   return 'jpeg';
 }
 ```
+
+찾아보니 [file-type](https://github.com/sindresorhus/file-type)이라는 자바스크립트용 라이브러리가 이미 존재한다.
