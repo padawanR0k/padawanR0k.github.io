@@ -1,23 +1,25 @@
-import Clarity from '@microsoft/clarity';
 import Head from 'next/head';
 import Script from 'next/script';
-import { Fragment } from "react";
+import { Fragment, useEffect } from 'react';
+import { clarity } from 'react-microsoft-clarity';
 import * as gtag from '../lib/gtag';
 import './styles.css';
 
 import NextTopLoader from 'nextjs-toploader';
 
 
-if (process.env.NODE_ENV === 'production') {
-  const projectId = "qhaci5tb0k"
-
-  Clarity.init(projectId);
-}
-
-
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
   gtag.useGtag();
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'production') {
+      const projectId = "qhaci5tb0k";
+
+      clarity.init(projectId);
+    }
+  }, [])
+
   return <Fragment>
     <Head>
       <link rel="stylesheet" type="text/css" href='https://blog.r0k.wiki/pretendard-subset.css'/>

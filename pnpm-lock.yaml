@@ -8,9 +8,6 @@ dependencies:
   '@giscus/react':
     specifier: ^2.3.0
     version: 2.3.0(react-dom@18.2.0)(react@18.2.0)
-  '@microsoft/clarity':
-    specifier: ^1.0.0
-    version: 1.0.0
   next:
     specifier: ^13.4.19
     version: 13.4.19(react-dom@18.2.0)(react@18.2.0)
@@ -35,6 +32,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  react-microsoft-clarity:
+    specifier: ^2.0.0
+    version: 2.0.0
 
 devDependencies:
   '@napi-rs/image':
@@ -303,10 +303,6 @@ packages:
     resolution: {integrity: sha512-HsvL6zgE5sUPGgkIDlmAWR1HTNHz2Iy11BAWPTa4Jjabkpguy4Ze2gzfLrg6pdRuBvFwgUYyxiaNqZwrEEXepA==}
     dependencies:
       langium: 3.0.0
-    dev: false
-
-  /@microsoft/clarity@1.0.0:
-    resolution: {integrity: sha512-2QY6SmXnqRj6dWhNY8NYCN3e53j4zCFebH4wGnNhdGV1mqAsQwql2fT0w8TISxCvwwfVp8idsWLIdrRHOms1PQ==}
     dev: false
 
   /@napi-rs/image-android-arm-eabi@1.6.1:
@@ -4047,6 +4043,10 @@ packages:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /react-microsoft-clarity@2.0.0:
+    resolution: {integrity: sha512-Hnbmiv+/vHSekS+Diho7SzvigNLNm+wayZMhxS4otaxPBlN3ccpY7k+PJd2Ytg3F6umU3JZzFtLzvK1WmfdhpA==}
     dev: false
 
   /react@18.2.0:
