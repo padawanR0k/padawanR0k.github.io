@@ -1,11 +1,18 @@
-import * as gtag from '../lib/gtag'
-import './styles.css'
-import {Fragment} from "react";
-import Script from 'next/script';
+import Clarity from '@microsoft/clarity';
 import Head from 'next/head';
+import Script from 'next/script';
+import { Fragment } from "react";
+import * as gtag from '../lib/gtag';
+import './styles.css';
 
 import NextTopLoader from 'nextjs-toploader';
 
+
+if (process.env.NODE_ENV === 'production') {
+  const projectId = "qhaci5tb0k"
+
+  Clarity.init(projectId);
+}
 
 
 // This default export is required in a new `pages/_app.js` file.

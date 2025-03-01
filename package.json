@@ -22,6 +22,7 @@
   "homepage": "https://github.com/shuding/nextra-docs-template#readme",
   "dependencies": {
     "@giscus/react": "^2.3.0",
+    "@microsoft/clarity": "^1.0.0",
     "next": "^13.4.19",
     "next-sitemap": "^4.2.3",
     "nextjs-toploader": "^1.6.12",
