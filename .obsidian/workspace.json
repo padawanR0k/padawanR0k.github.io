@@ -1,0 +1,284 @@
+{
+  "main": {
+    "id": "5c0ad90c83566319",
+    "type": "split",
+    "children": [
+      {
+        "id": "c14bfa24abaa12fc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7b3731d1a4a019f8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "pages/datadog/real-user-monitoring-realworld.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "real-user-monitoring-realworld"
+            }
+          },
+          {
+            "id": "2e6778c96ee8d62f",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "public/img/retention.png"
+              },
+              "icon": "lucide-image",
+              "title": "retention"
+            }
+          },
+          {
+            "id": "9401bb092a89933d",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "public/img/Product_Analytics.png"
+              },
+              "icon": "lucide-image",
+              "title": "Product_Analytics"
+            }
+          },
+          {
+            "id": "19cee4b83db123a1",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "public/img/resource_speed_query.png"
+              },
+              "icon": "lucide-image",
+              "title": "resource_speed_query"
+            }
+          },
+          {
+            "id": "2ea848ccee12ea78",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "pages/datadog/real-user-monitoring.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "real-user-monitoring"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1f030dee3bae6f3e",
+    "type": "split",
+    "children": [
+      {
+        "id": "c7a930697eb99eba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c9b91b29e2ffe247",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "91530ee9f607e360",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": ".png",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "71edf5914b69390e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 218.5
+  },
+  "right": {
+    "id": "df58bbf3abfdde1f",
+    "type": "split",
+    "children": [
+      {
+        "id": "6f25e5b143fb7c1b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "85bdd6964233bfd2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "pages/datadog/real-user-monitoring-realworld.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for real-user-monitoring-realworld"
+            }
+          },
+          {
+            "id": "cec918900cc18383",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "d4de5784320279bf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "60a0fd63b82a5a4c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "pages/datadog/real-user-monitoring-realworld.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of real-user-monitoring-realworld"
+            }
+          },
+          {
+            "id": "c7a35753fb89de32",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "bbcd86f7bf938f94",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "random-note:Open random note": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-book-search-plugin:Create new book note": false,
+      "templater-obsidian:Templater": false,
+      "omnisearch:Omnisearch": false,
+      "smart-composer:Open smart composer": false
+    }
+  },
+  "active": "7b3731d1a4a019f8",
+  "lastOpenFiles": [
+    "public/img/retention.png",
+    "pages/datadog/real-user-monitoring-realworld.md",
+    "public/img/Product_Analytics.png",
+    "public/img/resource_speed_query.png",
+    "public/img/resources.png",
+    "public/img/web_vital2.png",
+    "pages/datadog/real-user-monitoring.md",
+    "public/img/web_vital.png",
+    "public/img/CleanShot 2025-04-05 at 13.35.44@2x.png",
+    "datadog/real-user-monitoring.md",
+    "datadog/real-user-monitoring-dashboard.md",
+    "book/book_uiux.md"
+  ]
+}

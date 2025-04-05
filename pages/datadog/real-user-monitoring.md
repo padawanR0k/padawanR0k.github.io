@@ -1,10 +1,13 @@
 ---
-author: [padawanr0k]
-title: 프론트엔드 모니터링 도구 Datadog RUM
+author:
+  - padawanr0k
+title: 프론트엔드 에러 모니터링 - Datadog RUM
 date: 2025-02-22
-tags: ["web"]
+tags:
+  - web
 layout: post
-keywords: ["datadog RUM"]
+keywords:
+  - datadog RUM
 ---
 
 ## 에러 발생
