@@ -112,7 +112,7 @@ context로 전달된 custom attributes도 다른 값들과 동일하게 쿼리�
 
 ## 에러 알람 고도화
 
-datadog monitors 에서 RUM 에러 갯수 기준으로 트리거를 생성할 수 있다. ([lecture의 예시](https://app.datadoghq.com/monitors/100878041/edit))
+datadog monitors 에서 RUM 에러 갯수 기준으로 트리거를 생성할 수 있다.
 
 위 정보들을 활용해 만약 에러를 분류하고 높은 카디널리티를 가진 데이터들을 context에 넣어놨다면 단순 40개 이상 에러가 발생했을 때 에러 알람을 받는게 아니라 “영상 재생에 필요한 에셋 요청 40회 이상 실패 알람”, “XXX API 요청 20회 이상 실패 알람” 등이 가능해진다.
 
