@@ -1,7 +1,6 @@
-import React from 'react'
-import {DocsThemeConfig, useConfig} from 'nextra-theme-docs'
+import { useRouter } from "next/router";
+import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
 import Comments from './components/Comments';
-import {useRouter} from "next/router";
 import blogConfig from "./next-sitemap.config.mjs";
 
 const config: DocsThemeConfig = {
@@ -75,6 +74,15 @@ const config: DocsThemeConfig = {
   },
   footer: {
     content: ''
+  },
+  navbar: {
+    extraContent: () => {
+      return <div>
+        <a href="https://r0k.wiki" target="_blank">
+          My Wiki
+        </a>
+      </div>
+    },
   }
 }
 
