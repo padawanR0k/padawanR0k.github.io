@@ -4,10 +4,12 @@
   "description": "Nextra docs template",
   "type": "module",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/dev-with-temp-ko.js",
+    "dev:original": "next dev",
     "pre-deploy": "ts-node --swc pre-deploy.tsx",
     "generate-sitemap": "next-sitemap --config ./next-sitemap.config.mjs",
-    "build": "pnpm generate-sitemap && next build && next-export-optimize-images",
+    "build": "node scripts/build-with-temp-ko.js",
+    "build:original": "pnpm generate-sitemap && next build && next-export-optimize-images",
     "start": "next start"
   },
   "repository": {
@@ -44,5 +46,6 @@
     "satori": "^0.10.6",
     "ts-node": "^10.9.2",
     "typescript": "^4.9.3"
-  }
+  },
+  "packageManager": "pnpm@8.7.0+sha512.1d61f8c10e8a5a5dbfbddea0f1f5efb7dbd5177223073aec953cf230aa46416884b9427a6421dba78f28ad0f93fbede38ba57083237b350243de6b1e3a8ce71d"
 }
