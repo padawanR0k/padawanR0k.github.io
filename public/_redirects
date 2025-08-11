@@ -1,0 +1,7 @@
+# ko 경로를 루트로 리다이렉트
+/ko/* /:splat 301
+/ko / 301
+
+# 기존 영어 경로를 en으로 리다이렉트 (필요한 경우)
+# /about /en/about 301
+# /git/* /en/git/:splat 301

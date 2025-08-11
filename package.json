@@ -4,12 +4,10 @@
   "description": "Nextra docs template",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/dev-with-temp-ko.js",
-    "dev:original": "next dev",
+    "dev": "next dev",
     "pre-deploy": "ts-node --swc pre-deploy.tsx",
     "generate-sitemap": "next-sitemap --config ./next-sitemap.config.mjs",
-    "build": "node scripts/build-with-temp-ko.js",
-    "build:original": "pnpm generate-sitemap && next build && next-export-optimize-images",
+    "build": "pnpm generate-sitemap && next build && next-export-optimize-images",
     "start": "next start"
   },
   "repository": {

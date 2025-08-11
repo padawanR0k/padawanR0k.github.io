@@ -1,0 +1,17 @@
+name = "blog"
+compatibility_date = "2023-12-01"
+
+[env.production]
+account_id = "your-account-id"
+compatibility_date = "2023-12-01"
+
+# Pages 프로젝트 설정
+pages_build_output_dir = "out"
+
+# Functions 설정
+[build]
+command = "npm run build"
+
+# 환경 변수 (필요한 경우)
+[vars]
+ENVIRONMENT = "production"
