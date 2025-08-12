@@ -1,0 +1,74 @@
+# [EN Translation Placeholder] ## Use AI for prop mapping
+
+---
+author: [padawanr0k]
+title: 피그마 코드 커넥트 팁 정리
+date: 2024-12-27
+tags: ["code-connect"]
+layout: post
+image: ../../img/figma-code-connect.png
+keywords: ["figma", "code-connect"]
+---
+
+계속 추가 중...
+
+참고하면 좋은 피그마 공식 레포지토리 주소: https://github.com/figma/sds/blob/main/figma.config.json
+
+### Use AI for prop mapping
+피그마의 AI 플랜을 포함한 엔터프라이즈 멤버쉽을 사용하고 있는 경우, `npx figma connect` 사용시 [AI로 props 매핑](https://www.figma.com/code-connect-docs/quickstart-guide/#publish-code-connect-files:~:text=Use%20AI%20for%20prop%20mapping)해주는 기능을 쓸 수 있다.
+
+### [importPaths](https://www.figma.com/code-connect-docs/api/config-file/#importpaths)
+
+`figma connect publish`를 통해 dev mode에 코드가 보여질 때 import 경로를 변경할 수 있음
+원래는 `Button.figma.tsx`에 하드코딩된 경로를 보여준다.
+```tsx
+import Button from "../src/components/Button"
+<Button>
+    ...
+</Button>
+```
+
+`figma.config.json`에 설정을 적용하여
+```json
+{
+  "codeConnect": {
+    "importPaths": {
+      "src/*": "@shared/ds-react"
+    },
+    ...
+  }
+}
+```
+
+아래처럼 변경할 수 있다.
+```tsx
+import Button from "@shared/ds-react"
+<Button>
+    ...
+</Button>
+```
+
+### [imports](https://www.figma.com/code-connect-docs/api/config-file/#imports)
+`importsPaths`를 사용해 원하는 결과를 얻을 수 없을 때, 강제로 덮어쓰는 용도로 사용하면 좋다.
+
+```tsx
+figma.connect(Button, "https://...", {
+  imports: ["import { Button } from '@lib'"]
+})
+```
+
+### [documenturlsubstitutions](https://www.figma.com/code-connect-docs/api/config-file/#documenturlsubstitutions)
+피그마에서 재사용 가능한 노드는 URL이 존재하는데, 이를 코드에 하드코딩하게되면 디자인 시안상에서의 노드변화가 있을 때 코드에 영향이 많이 갈 수 있다.
+이를 방지할 수 있도록 figma 노드 URL을 변수로써 다룰 수 있게 해준다.
+
+```json
+"documentUrlSubstitutions": {
+  "<FIGMA_ICONS_BASE>": "https://figma.com/design/J0KLPKXiONDRssXD1AX9Oi",
+}
+```
+
+```tsx
+figma.connect(Icon, '<FIGMA_ICONS_BASE>', {
+  ...
+})
+```

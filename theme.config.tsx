@@ -9,6 +9,10 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/padawanR0k/padawanR0k.github.io',
   },
   docsRepositoryBase: 'https://github.com/padawanr0k/padawanr0k.github.io/tree/main/docs',
+  i18n: [
+    { locale: 'ko', name: '한국어' },
+    { locale: 'en', name: 'English' }
+  ],
   // useNextSeoProps() {
   //   const { asPath, pathname } = useRouter()
   //   if (asPath !== '/') {
@@ -41,7 +45,7 @@ const config: DocsThemeConfig = {
       <Comments />
     </>
   },
-  head: (props) =>{
+  head: () =>{
     const {asPath} = useRouter()
     const config = useConfig()
 

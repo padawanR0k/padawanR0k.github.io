@@ -1,0 +1,22 @@
+# 리다이렉트 캐시 설정
+/ko/*
+  Cache-Control: max-age=31536000
+
+/ko
+  Cache-Control: max-age=31536000
+
+# 정적 파일 캐시
+/*.css
+  Cache-Control: max-age=31536000
+
+/*.js
+  Cache-Control: max-age=31536000
+
+/*.png
+  Cache-Control: max-age=31536000
+
+/*.jpg
+  Cache-Control: max-age=31536000
+
+/*.webp
+  Cache-Control: max-age=31536000
