@@ -1,6 +1,6 @@
 ---
 author: [padawanr0k]
-title: Figma Code Connect for Front-End Developer Productivity
+title: Figma Code Connect Tips
 date: 2024-08-03
 tags: ["code-connect"]
 layout: post
@@ -8,157 +8,16 @@ image: ../../img/figma-code-connect.png
 keywords: ["figma", "code-connect"]
 ---
 
-import YouTube from '../../../components/Youtube'
+Work in progress...
 
-## Their Productivity Is So Envy-Worthy
-
-For years, technologically advanced organizations have been trying to automatically generate code from design mockups.
-- [[A1] Do more, with less. - Design System, what's next?](https://www.youtube.com/watch?v=LmLchZ4tCXc&ab_channel=FEConfKorea)
-- [Introduction to DEUS](https://tosspublic.notion.site/DEUS-b1eb298b1b1f45aa93cd169574afde1d)
-- [OROR Forge: Creating a Figma to Code Tool (1) Let's turn designs into code!](https://tech.kakao.com/posts/611)
-
-Working in a relatively small organization, I would read these tech blog posts and think, "Wow, they must have it so easy." We didn't have a dedicated team for our internal design system, so opportunities and time for such productivity enhancements were limited, as our focus was on product sprints.
-
-We use Figma at my company, and I tried a design-to-code tool plugin called [Anima](https://www.animaapp.com/figma), but it wasn't great. So I just waited...
-
-Then, around June 2024, Figma announced Code Connect.
-
----
-
-## Code Connect
-
-<YouTube id="FrgH2VMIOf8" />
-
-I'd been using Figma's [Dev mode](https://www.youtube.com/watch?v=__ABPkb0aF8) since it came out in June 2023, and I thought it was pretty good for developers. But this new update brought something even more incredible.
-
-It was the very tool I had been so envious of: one that turns design mockups into code.
-
-<YouTube id="5GVNfbltrQg" />
-
-It doesn't turn the entire mockup into code, but rather works by registering components and then converting those components into code. Still, I thought, "This is a huge step forward!"
-
-The process is as follows:
-
-### 1. Components created in Figma get a unique ID and link.
-
-### 2. Run the component code generation command provided by the Code Connect CLI.
-
-```bash
-npx figma connect create "https://..." --token <auth token>
-````
-
-### 3\. `figma connect create` uses the unique link to generate code based on the properties of the component registered on the Figma server.
-
-This file is a definition file that specifies which URL a component is linked to, what properties the component has in Figma, and so on.
-
-```tsx
-import figma from '@figma/code-connect'
-import { Button } from 'src/components'
-
-figma.connect(Button, 'https://...', {
-  {
-    props: {
-      leftIcon: figma.boolean('leftIcon'),
-      rightIcon: figma.boolean('rightIcon'),
-      children: figma.string('children'),
-      variant: figma.enum('variant', {
-        default: 'default',
-        outline: 'outline',
-        light: 'light',
-        filled: 'filled',
-        subtle: 'subtle',
-      }),
-      color: figma.enum('color', {
-        infgreen: 'infgreen',
-        rallit: 'rallit',
-        dark: 'dark',
-        gray: 'gray',
-        red: 'red',
-      }),
-      size: figma.enum('size', {
-        xs: 'xs',
-        sm: 'sm',
-        md: 'md',
-        lg: 'lg',
-        xl: 'xl',
-      }),
-      states: figma.enum('states', {
-        default: 'default',
-        hover: 'hover',
-      }),
-      disabled: figma.boolean('disabled'),
-      compact: figma.boolean('compact'),
-      radius: figma.enum('radius', {
-        md: 'md',
-      }),
-      fullWidth: figma.boolean('fullWidth'),
-    },
-    example: (props) => (
-      <Button
-        leftIcon={props.leftIcon}
-        rightIcon={props.rightIcon}
-        variant={props.variant}
-        color={props.color}
-        size={props.size}
-        disabled={props.disabled}
-        compact={props.compact}
-        fullWidth={props.fullWidth}
-        radius={props.radius}>
-        {props.children}
-      </Button>
-    ),
-  }
-  example: () => {
-    return <Button />
-  },
-})
-```
-
-### 4\. Upload the generated definition file to Figma.
-
-```bash
-npx figma connect publish --token <token>
-```
-
-### 5\. Now you can see the code when you select that component in Figma.
-
-\<img src="/img/figma-code-connect-01.png" width="300" alt="Code Connect Example" /\>
-
------
-
-## I Can Finally Work More Efficiently
-
-My productivity won't increase right away, but it will soon, thanks to a global tech giant. That's because I need to connect Code Connect to every single design system component to achieve the level of automated code generation I'm looking for.
-
-### But it's not as easy as it seems.
-
-  - The property names used by designers in Figma often differ from the property names used in our code.
-      - Connecting Code Connect has actually become a great opportunity to align these naming conventions.
-  - Some properties are necessary for the design mockup but are unnecessary in the actual code.
-  - Since it's a beta version, the library isn't perfect yet. The documentation isn't very detailed, either, so I'm learning by trial and error.
-  - As I mentioned earlier, our team doesn't allocate dedicated work time for these kinds of experimental productivity tools, so I have to invest my personal time. The same goes for the designers I collaborate with.
-      - However, as we connect more and more components and receive positive feedback from people using them, it motivates me to keep going.
-
------
-
------
-
-## author: [padawanr0k] title: Figma Code Connect Tips date: 2024-12-27 tags: ["code-connect"] layout: post image: ../../../img/figma-code-connect.png keywords: ["figma", "code-connect"]
-
-Still adding more...
-
-A helpful official Figma repository to check out: https://github.com/figma/sds/blob/main/figma.config.json
+A helpful reference: the official Figma repository — https://github.com/figma/sds/blob/main/figma.config.json
 
 ### Use AI for prop mapping
+If your organization has Figma's AI plan as part of an enterprise membership, you can use the feature that maps props using AI when running `npx figma connect` ([AI prop mapping](https://www.figma.com/code-connect-docs/quickstart-guide/#publish-code-connect-files:~:text=Use%20AI%20for%20prop%20mapping)).
 
-If you're using an enterprise membership that includes Figma's AI plan, you can use the **[AI for prop mapping](https://www.google.com/search?q=https://www.figma.com/code-connect-docs/quickstart-guide/%23publish-code-connect-files:~:text%3DUse%2520AI%2520for%2520prop%2520mapping)** feature when you run `npx figma connect`.
+### [importPaths](https://www.figma.com/code-connect-docs/api/config-file/#importpaths)
 
-### `importPaths`
-
-You can change the import paths that appear in dev mode when you run `figma connect publish`.
-
-By default, the code shows a hardcoded path from the `Button.figma.tsx` file:
-
+You can change the import paths shown in Dev Mode when `figma connect publish` makes code visible. By default it shows the hardcoded relative path in the generated `Button.figma.tsx`, for example:
 ```tsx
 import Button from "../src/components/Button"
 <Button>
@@ -166,8 +25,7 @@ import Button from "../src/components/Button"
 </Button>
 ```
 
-By applying a setting in your `figma.config.json` file, you can change this:
-
+By adding settings in `figma.config.json`:
 ```json
 {
   "codeConnect": {
@@ -179,8 +37,7 @@ By applying a setting in your `figma.config.json` file, you can change this:
 }
 ```
 
-This will change the import path to:
-
+You can change the import to:
 ```tsx
 import Button from "@shared/ds-react"
 <Button>
@@ -188,9 +45,8 @@ import Button from "@shared/ds-react"
 </Button>
 ```
 
-### `imports`
-
-This is useful for overriding paths when `importPaths` doesn't give you the desired result.
+### [imports](https://www.figma.com/code-connect-docs/api/config-file/#imports)
+If `importPaths` doesn't give you the desired result, you can force an import override using the `imports` option.
 
 ```tsx
 figma.connect(Button, "https://...", {
@@ -198,13 +54,12 @@ figma.connect(Button, "https://...", {
 })
 ```
 
-### `documentUrlSubstitutions`
-
-Reusable nodes in Figma have a URL. Hardcoding these URLs into your code can cause problems if the nodes change in the design. This feature allows you to treat Figma node URLs as variables to avoid this issue.
+### [documentUrlSubstitutions](https://www.figma.com/code-connect-docs/api/config-file/#documenturlsubstitutions)
+Reusable nodes in Figma have stable URLs. If you hardcode those URLs into generated code, any change to the node in the design can break or require code changes. `documentUrlSubstitutions` lets you treat those Figma node URLs as variables to avoid that fragility.
 
 ```json
 "documentUrlSubstitutions": {
-  "<FIGMA_ICONS_BASE>": "[https://figma.com/design/J0KLPKXiONDRssXD1AX9Oi](https://figma.com/design/J0KLPKXiONDRssXD1AX9Oi)",
+  "<FIGMA_ICONS_BASE>": "https://figma.com/design/J0KLPKXiONDRssXD1AX9Oi",
 }
 ```
 
