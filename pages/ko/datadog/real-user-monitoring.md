@@ -59,7 +59,7 @@ datadog RUM에 에러가 남겨지면 여러 정보가 저장된다. 여기서 �
 
 그렇다면 console.error로 호출하면서 `datadogRum.addError()` 도 실행시키고 있다면 중복으로 찍히는거 아닌가? 맞다.
 
-![데이터독 럼 에러 예시](../../public/img/datadog-rum-error-list.png)
+![데이터독 럼 에러 예시](/img/datadog-rum-error-list.png)
 
 
 - `datadogRum.addError()` 에 의해 custom로 기록됨
@@ -95,7 +95,7 @@ export class ShakaError extends Error {
 여기서 `Error.captureStackTrace` 를 통해 스택 트레이스를 전달해야한다.
 
 그 경우 확장한 Error객의 name으로 error type이 표시된다.
-![datadog error type](../../public/img/datadog-error-type.png)
+![datadog error type](/img/datadog-error-type.png)
 
 
 
@@ -105,7 +105,7 @@ export class ShakaError extends Error {
 
 해당 값이 같이 전달된 오류의 경우 다음과 같이 에러 상세 페이지에서 Custom Attributes 섹션에서 확인할 수 있다.
 
-![datadog rum custom attributes](../../public/img/datadog-rum-custom-attributes.png)
+![datadog rum custom attributes](/img/datadog-rum-custom-attributes.png)
 context로 전달된 custom attributes도 다른 값들과 동일하게 쿼리하는데 사용할 수 있다.
 
 `@context.errorDetail.data` 이런식으로 키값으로 그루핑하거나 필터링 가능하다.
@@ -146,4 +146,4 @@ export class ShakaError extends Error {
 ```
 
 이렇게 전달된 로그는 [Datadog Log Explorer](https://docs.datadoghq.com/logs/explorer/)에서 확인할 수 있다. 그리고 이 로그를 남긴 특정 유저의 RUM Session 하위 View 이벤트 타입의 Logs 탭에서 확인할 수 있다. 이를 통해 RUM에서 에러가 아닌 정보성 로그도 확인할 수 있다
-![datadog view logs](../../public/img/datadog-view-logs.png)
+![datadog view logs](/img/datadog-view-logs.png)

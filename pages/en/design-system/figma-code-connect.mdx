@@ -1,8 +1,7 @@
-# [EN Translation Placeholder] # 부럽다. 그들의 생산성
 
 ---
 author: [padawanr0k]
-title: 프론트엔드 개발자 생산성을 위한 피그마 코드 커넥트
+title: Figma Code Connect for Front-End Developer Productivity
 date: 2024-08-03
 tags: ["code-connect"]
 layout: post
@@ -10,47 +9,48 @@ image: ../../img/figma-code-connect.png
 keywords: ["figma", "code-connect"]
 ---
 
-import YouTube from '../../components/Youtube'
+import YouTube from '../../../components/Youtube'
 
-## 부럽다. 그들의 생산성
+## Their Productivity Is So Envy-Worthy
 
-몇년전 부터 기술적으로 치고나가던 조직들은 디자인 시안을 기반으로 코드를 자동 생성하려는 시도를 해왔었다.
-- [[A1] Do more, with less. - 디자인 시스템, 그다음은?](https://www.youtube.com/watch?v=LmLchZ4tCXc&ab_channel=FEConfKorea)
-- [DEUS 소개](https://tosspublic.notion.site/DEUS-b1eb298b1b1f45aa93cd169574afde1d)
-- [OROR Forge: Figma to Code 도구 제작기 \(1\) 디자인을 코드로 만들어보자!](https://tech.kakao.com/posts/611)
+For years, technologically advanced organizations have been trying to automatically generate code from design mockups.
+- [[A1] Do more, with less. - Design System, what's next?](https://www.youtube.com/watch?v=LmLchZ4tCXc&ab_channel=FEConfKorea)
+- [Introduction to DEUS](https://tosspublic.notion.site/DEUS-b1eb298b1b1f45aa93cd169574afde1d)
+- [OROR Forge: Creating a Figma to Code Tool (1) Let's turn designs into code!](https://tech.kakao.com/posts/611)
 
-비교적 작은 조직에서 지내며 이런 기술 블로그 글들을 보면서 "와 저기는 진짜 편하게 일하겠다" 라는 생각만 해왔었다. 내부 디자인 시스템을 따로 완전히 담당하는 팀이 없기 때문에 제품을 위한 스프린트외에 이런 생산성 향상을 위한 시간이나 기회는 비교적 적었기 때문이다.
+Working in a relatively small organization, I would read these tech blog posts and think, "Wow, they must have it so easy." We didn't have a dedicated team for our internal design system, so opportunities and time for such productivity enhancements were limited, as our focus was on product sprints.
 
-회사에서는 figma를 사용중인데, 플러그인 중에 [Anima](https://www.animaapp.com/figma)라는 design to code 류 도구가 있어서 사용해봤지만 별로였다. 그렇게 손가락만 빨고 있다가..
+We use Figma at my company, and I tried a design-to-code tool plugin called [Anima](https://www.animaapp.com/figma), but it wasn't great. So I just waited...
 
-2024년 6월경 피그마에서 Code Connect를 발표했다.
+Then, around June 2024, Figma announced Code Connect.
 
+---
 
 ## Code Connect
 
 <YouTube id="FrgH2VMIOf8" />
 
-2023년 6월에 figma에서 [Dev mode](https://www.youtube.com/watch?v=__ABPkb0aF8)가 나오면서 개발할 때 보기 편해졌다고 생각하면서 사용하고 있었다. 그런데 이번 업데이트에는 더 무시무시한게 나왔다.
+I'd been using Figma's [Dev mode](https://www.youtube.com/watch?v=__ABPkb0aF8) since it came out in June 2023, and I thought it was pretty good for developers. But this new update brought something even more incredible.
 
-바로 예전부터 부러워했던 디자인 시안을 코드로 바꿔주는 도구였다.
+It was the very tool I had been so envious of: one that turns design mockups into code.
 
 <YouTube id="5GVNfbltrQg" />
 
-사실 시안은 100% 코드로 바꿔주는건 아니고, 컴포넌트 단위로 등록을 하면 그 컴포넌트를 코드로 바꿔주는 방식이다. 그래도 "이거라도 어디야!" 싶었다.
+It doesn't turn the entire mockup into code, but rather works by registering components and then converting those components into code. Still, I thought, "This is a huge step forward!"
 
-흐름은 다음과 같았다.
+The process is as follows:
 
-#### 1. figma에서 컴포넌트 단위로 작성한 요소는 고유한 id와 링크를 가지게 된다.
+### 1. Components created in Figma get a unique ID and link.
 
-#### 2. code connect cli에서 제공하는 컴포넌트 코드 생성 명령어를 실행한다.
+### 2. Run the component code generation command provided by the Code Connect CLI.
 
 ```bash
 npx figma connect create "https://..." --token <auth token>
-```
+````
 
-#### 3. `figma connect create`가 고유한 링크 통해 figma 서버에 등록된 컴포넌트의 프로퍼티 정보를 기반으로 코드를 생성한다.
+### 3\. `figma connect create` uses the unique link to generate code based on the properties of the component registered on the Figma server.
 
-이 파일은 다음과 같이 컴포넌트가 어느 URL과 연결되는지, 컴포넌트는 피그마 상에서 어떤 프로퍼티를 가지는지 등을 정의하는 정의파일이다.
+This file is a definition file that specifies which URL a component is linked to, what properties the component has in Figma, and so on.
 
 ```tsx
 import figma from '@figma/code-connect'
@@ -115,24 +115,27 @@ figma.connect(Button, 'https://...', {
 })
 ```
 
-#### 4. 생성된 정의파일을 피그마에 업로드한다.
+### 4\. Upload the generated definition file to Figma.
+
 ```bash
 npx figma connect publish --token <token>
 ```
 
-#### 5. 이제 피그마에서 해당 컴포넌트를 선택하면 코드를 볼 수 있다.
+### 5\. Now you can see the code when you select that component in Figma.
 
-<img src="/img/figma-code-connect-01.png" width="300" alt="code connect 예시" />
+\<img src="/img/figma-code-connect-01.png" width="300" alt="Code Connect Example" /\>
 
+-----
 
-## 나도 이제 편하게 일할 수 있다
-글로벌 대기업 덕분에 생산성이 높아졌다 가 아니라 높아질 예정이다.
-왜냐면 모든 디자인 시스템 컴포넌트에 코드 커넥트를 연결시켜야 내가 원하는 수준의 코드 자동 생성이 가능하기 때문이다.
+## I Can Finally Work More Efficiently
 
-### 근데 생각보다 쉽지 않다.
-- 디자이너 분들이 figma에서 사용하는 프로퍼티 이름과 실제 코드에서 사용하는 프로퍼티 이름이 다른 경우가 많다.
-  - 코드 커넥트를 연결하면서 이런걸 맞춰가는 좋은 계기가 되기도 했다.
-- 디자인 시안에서는 필요하지만 개발적인 코드에서는 불필요한 프로퍼티가 존재한다.
-- 아무래도 베타버전 라이브러리이다 보니 아직 기능이 완벽하지 않다. 문서도 자세히 되어 있진 않다. 그래서 직접 부딫혀가며 알아내가고 있다.
-- 맨 처음에 말했듯 이런 생산성을 위한 실험적인 도구를 도입하는데 실무시간을 따로 할당하고 있지 않기 때문에 개인시간을 투자해야 한다. 나도 그렇고 협업하는 디자이너분도 그렇다.
-  - 근데 하나 둘씩 컴포넌트들이 연결되고, 그걸 쓰는 사람들의 좋은 피드백을 받으니 계속 연결하고 싶은 마음이 든다.
+My productivity won't increase right away, but it will soon, thanks to a global tech giant. That's because I need to connect Code Connect to every single design system component to achieve the level of automated code generation I'm looking for.
+
+### But it's not as easy as it seems.
+
+  - The property names used by designers in Figma often differ from the property names used in our code.
+      - Connecting Code Connect has actually become a great opportunity to align these naming conventions.
+  - Some properties are necessary for the design mockup but are unnecessary in the actual code.
+  - Since it's a beta version, the library isn't perfect yet. The documentation isn't very detailed, either, so I'm learning by trial and error.
+  - As I mentioned earlier, our team doesn't allocate dedicated work time for these kinds of experimental productivity tools, so I have to invest my personal time. The same goes for the designers I collaborate with.
+      - However, as we connect more and more components and receive positive feedback from people using them, it motivates me to keep going.
