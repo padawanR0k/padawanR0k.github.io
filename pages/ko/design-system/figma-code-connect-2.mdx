@@ -12,6 +12,33 @@ keywords: ["figma", "code-connect"]
 
 참고하면 좋은 피그마 공식 레포지토리 주소: https://github.com/figma/sds/blob/main/figma.config.json
 
+---
+
+### 코드와 피그마 사이의 간격 줄이기
+
+결국 피그마 코드 커넥트는 피그마에 작성된 내용을 기반으로 코드가 생성되는 것이기 때문에 디자인 시스템 코드 구현과 피그마에서의 구현이 최대한 일치하는 것이 좋다.
+하지만 피그마는 개발자가 컴포넌트를 작성하는 것처럼 동작하지 않기에 충분한 커뮤니케이션을 하며 맞춰나가야한다.
+
+- 특정 prop이 다양한 enum을 가질 수 있을 때, 피그마에서 그걸 구현하려면 n개만큼의 경우의 수가 추가되어야한다. 케이스가 prop a가 3개 b가 6개라면 18개의 경우의 수가 추가되어야한다.
+- 특정 prop이 선택적으로 들어가야하는 경우, `figma.boolean`을 사용하면 이 분기를 코드 커넥트상에서 나타낼 수 있다.
+
+```tsx
+figma.connect(Avatar, '<FIGMA_Avatar>', {
+  props: {
+    ...
+    src: figma.boolean('hasSrc', {
+      true: '여기에 이미지 주소를 입력하세요',
+      false: undefined,
+    }),
+  },
+  example: ({ children, ...props }) => <Avatar {...props}>{children}</Avatar>,
+});
+```
+
+위처럼 작성하면 피그마에서 `hasSrc` 프로퍼티가 `true`일 때만 `src` 프로퍼티가 보여진다.
+
+
+
 ### Use AI for prop mapping
 피그마의 AI 플랜을 포함한 엔터프라이즈 멤버쉽을 사용하고 있는 경우, `npx figma connect` 사용시 [AI로 props 매핑](https://www.figma.com/code-connect-docs/quickstart-guide/#publish-code-connect-files:~:text=Use%20AI%20for%20prop%20mapping)해주는 기능을 쓸 수 있다.
 
