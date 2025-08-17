@@ -14,7 +14,7 @@ export default withExportImages(withNextra({
   output: 'export',
   i18n: {
     locales: ['ko', 'en'],
-    defaultLocale: 'ko',
+    // defaultLocale: 'ko',
     // localeDetection: false
   }
 }))

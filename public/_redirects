@@ -2,6 +2,7 @@
 # 기본 로케일(ko)이므로 루트 경로 접근을 /ko 경로로 리다이렉트
 
 # 루트 경로를 한국어 경로로 리다이렉트
+/ /ko 301
 /web/* /ko/web/:splat 301
 /git/* /ko/git/:splat 301
 /css/* /ko/css/:splat 301
