@@ -1,0 +1,191 @@
+---
+author: [padawanr0k]
+title: 피그마 MCP 사용시 팁 정리
+date: 2025-10-12
+tags: ["code-connect"]
+layout: post
+image: ../../img/figma-code-connect.png
+keywords: ["figma", "code-connect"]
+---
+여타 서비스들이 MCP를 제공해주듯 피그마도 [MCP 서버](help.figma.com/hc/ko/articles/32132100833559-Dev-Mode-MCP-서버-안내서)가 존재한다.
+
+코드 커넥트 연결은 Figma MCP를 사용해 코드를 생성할 때 문맥을 더 잘이해할 수 있도록 도와준다.
+
+### Figma MCP가 제공하는 내부 함수들은 다음과 같다
+
+- [get_code](https://help.figma.com/hc/ko/articles/32132100833559-Dev-Mode-MCP-%EC%84%9C%EB%B2%84-%EC%95%88%EB%82%B4%EC%84%9C#h_01JZ8NN55YRA6MAEYQH8R5FKTC)
+    - 선택한 영역의 코드 (React + Tailwind가 기본형태)
+- [get_variable_defs](https://help.figma.com/hc/ko/articles/32132100833559-Dev-Mode-MCP-%EC%84%9C%EB%B2%84-%EC%95%88%EB%82%B4%EC%84%9C#h_01JZ8NN55Y66P75FBKZEG689SS)
+    - 선택 항목에 사용된 스타일
+- [get_code_connect_map](https://help.figma.com/hc/ko/articles/32132100833559-Dev-Mode-MCP-%EC%84%9C%EB%B2%84-%EC%95%88%EB%82%B4%EC%84%9C#h_01JZ8NN55YJAEMBG455VDBM4JK)
+    - 코드 커넥트가 연결된 요소가 있다면 매핑하기 위해 사용
+- [get_image](https://help.figma.com/hc/ko/articles/32132100833559-Dev-Mode-MCP-%EC%84%9C%EB%B2%84-%EC%95%88%EB%82%B4%EC%84%9C#h_01JZ8NN55YZ218GSTFJVF75J8K)
+    - 이미지 추출
+
+### 코드를 잘 만들게 하려면
+
+공식문서에도 나와있듯 Figma 파일 구조화 및 디자이너와 개발자간의 이격 맞추기 + 합의하기가 필요하다.
+
+디자이너는 왠만하면 코드커넥트에 연결된 디자인 인스턴스를 활용해 디자인을 해야되고 서로 색상이나 스타일 네이밍을 맞출 때 더 의미있는 네이밍을 사용해야한다 →  `Group 5`가 아니라 `CardContainer` 같은 워딩을 쓰기
+
+프롬프트도 자세할수록 좋다. 그리고 llm이 더 자세히 문맥을 이해할 수 있도록 룰 같은걸 추가하는것도 좋다.
+
+예를 들어 나는 [Mantine](https://mantine.dev/) 디자인 시스템을 사용하는데 해당 디자인 시스템 컴포넌트에 공통적으로 적용되는 규칙같은걸 제공해준다. 그리고 사용하면서 디자인 → 코드화가 제대로 안되는 부분은 룰을 조금씩 수정하면서 개선하고 있다.
+
+당근의 오픈소스 [SEED 디자인 시스템](https://seed-design.io/react/ai-integration/llms-txt)을 보면 이런 가이드가 엄청 잘 되어있다.
+> ex) [llms-full.txt](https://seed-design.io/react/llms-full.txt)
+
+
+저거에 비하면 우리가 쓰는 룰은 엄청 간단하다... 다음은 현재 우리가 쓰고 있는 룰의 일부다
+---
+
+## @Supported props (지원되는 프롭)
+
+모든 Mantine 컴포넌트는 다음과 같은 스타일 프롭을 지원합니다:
+
+| Prop      | CSS 속성               | 테마 키 (Theme key) |
+| --------- | -------------------- | ---------------- |
+| `m`       | margin               | `theme.spacing`  |
+| `mt`      | marginTop            | `theme.spacing`  |
+| `mb`      | marginBottom         | `theme.spacing`  |
+| `ml`      | marginLeft           | `theme.spacing`  |
+| `mr`      | marginRight          | `theme.spacing`  |
+| `mx`      | marginLeft + Right   | `theme.spacing`  |
+| `my`      | marginTop + Bottom   | `theme.spacing`  |
+| `p`       | padding              | `theme.spacing`  |
+| `pt`      | paddingTop           | `theme.spacing`  |
+| `pb`      | paddingBottom        | `theme.spacing`  |
+| `pl`      | paddingLeft          | `theme.spacing`  |
+| `pr`      | paddingRight         | `theme.spacing`  |
+| `px`      | paddingLeft + Right  | `theme.spacing`  |
+| `py`      | paddingTop + Bottom  | `theme.spacing`  |
+| `bg`      | background           | `theme.colors`   |
+| `c`       | color                | `theme.colors`   |
+| `opacity` | opacity              | –                |
+| `ff`      | fontFamily           | –                |
+| `fz`      | fontSize             | `theme.fontSize` |
+| `fw`      | fontWeight           | –                |
+| `lts`     | letterSpacing        | –                |
+| `ta`      | textAlign            | –                |
+| `lh`      | lineHeight           | –                |
+| `fs`      | fontStyle            | –                |
+| `tt`      | textTransform        | –                |
+| `td`      | textDecoration       | –                |
+| `w`       | width                | `theme.spacing`  |
+| `miw`     | minWidth             | `theme.spacing`  |
+| `maw`     | maxWidth             | `theme.spacing`  |
+| `h`       | height               | `theme.spacing`  |
+| `mih`     | minHeight            | `theme.spacing`  |
+| `mah`     | maxHeight            | `theme.spacing`  |
+| `bgsz`    | backgroundSize       | –                |
+| `bgp`     | backgroundPosition   | –                |
+| `bgr`     | backgroundRepeat     | –                |
+| `bga`     | backgroundAttachment | –                |
+| `pos`     | position             | –                |
+| `top`     | top                  | –                |
+| `left`    | left                 | –                |
+| `bottom`  | bottom               | –                |
+| `right`   | right                | –                |
+| `inset`   | inset                | –                |
+| `display` | display              | –                |
+
+## @Theme values (테마 값 참조)
+
+일부 스타일 프롭은 theme 값을 참조할 수 있습니다. 예를 들어, `mt="xs"`는 `theme.spacing.xs` 값을 사용합니다.
+
+```tsx
+import { Box } from '@mantine/core';
+
+// margin-top: theme.spacing.xs
+<Box mt="xs" />
+
+// margin-top: auto
+<Box mt="auto" />
+
+// margin-top: 1rem
+<Box mt={16} />
+
+// margin-top: 5rem
+<Box mt="5rem" />
+```
+
+색상 프롭도 theme 참조 가능:
+
+```tsx
+// color: theme.colors.blue[theme.fn.primaryShade()]
+<Box c="blue" />
+
+// background: theme.colors.orange[1]
+<Box bg="orange.1" />
+
+// color: theme.colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6]
+<Box c="dimmed" />
+
+// background: #EDFEFF
+<Box bg="#EDFEFF" />
+
+// background: rgba(0, 34, 45, 0.6)
+<Box bg="rgba(0, 34, 45, 0.6)" />
+```
+
+---
+
+# Figma to Mantine 컴포넌트 변환 규칙
+
+## 🎯 기본 원칙
+
+### 1. Mantine Style Props 우선 사용
+
+* CSS-in-JS 객체 생성보다 Mantine의 built-in style props를 최우선으로 사용
+* 복잡한 스타일이나 Mantine props로 불가능한 경우에만 `css` prop 사용
+
+### 2. Props 이름 매핑
+
+```tsx
+// ❌ 기존 방식
+<Text weight="600" color="gray.9" align="center" />
+
+// ✅ Mantine v6 방식
+<Text fw={600} c="gray.9" ta="center" />
+```
+
+## 📝 주요 Props 변환 규칙
+
+### Typography Props
+
+* `weight` → `fw` (fontWeight)
+* `color` → `c` (color)
+* `align` → `ta` (textAlign)
+* `size` → `size` (동일)
+* `lh` → `lh` (lineHeight, 동일)
+
+### Layout Props
+
+* `margin` → `m`, `mt`, `mb`, `ml`, `mr`, `mx`, `my`
+* `padding` → `p`, `pt`, `pb`, `pl`, `pr`, `px`, `py`
+* `width` → `w`, `miw` (minWidth), `maw` (maxWidth)
+* `height` → `h`, `mih` (minHeight), `mah` (maxHeight)
+* `background` → `bg`
+
+### Display & Position Props
+
+* `display="flex"` 직접 사용
+* `position`, `top`, `left`, `bottom`, `right` 직접 사용
+
+## 🚫 피해야 할 패턴
+
+### 1. CSS-in-JS 객체 남발
+
+```tsx
+// ❌ 피해야 할 방식
+const styleContainer = css({
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  padding: '16px 20px',
+});
+
+// ✅ 권장 방식
+<Box h="100%" display="flex" style={{ flexDirection: 'column' }} px={20} py={16} />
+```
+---

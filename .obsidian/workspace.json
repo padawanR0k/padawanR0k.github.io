@@ -11,24 +11,10 @@
             "id": "7b3731d1a4a019f8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "pages/datadog/real-user-monitoring-realworld.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "real-user-monitoring-realworld"
+              "title": "New tab"
             }
           },
           {
@@ -211,13 +197,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pages/datadog/real-user-monitoring-realworld.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of real-user-monitoring-realworld"
+              "title": "Outline"
             }
           },
           {
@@ -253,6 +238,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "random-note:Open random note": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
