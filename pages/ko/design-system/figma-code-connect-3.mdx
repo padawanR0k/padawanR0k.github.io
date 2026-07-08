@@ -2,6 +2,7 @@
 author: [padawanr0k]
 title: 피그마 MCP 사용시 팁 정리
 date: 2025-10-12
+updated: 2026-07-09T08:53:58+09:00
 tags: ["code-connect"]
 layout: post
 image: ../../img/figma-code-connect.png
@@ -21,6 +22,50 @@ keywords: ["figma", "code-connect"]
     - 코드 커넥트가 연결된 요소가 있다면 매핑하기 위해 사용
 - [get_image](https://help.figma.com/hc/ko/articles/32132100833559-Dev-Mode-MCP-%EC%84%9C%EB%B2%84-%EC%95%88%EB%82%B4%EC%84%9C#h_01JZ8NN55YZ218GSTFJVF75J8K)
     - 이미지 추출
+
+> **업데이트 (2026년 7월 9일 기준)**: 그 사이 Figma MCP가 제공하는 함수가 크게 늘었다. 기존 `get_code`는 `get_design_context`로, `get_image`는 `get_screenshot`으로 이름이 바뀌었고, 단순 조회를 넘어 Figma 파일에 직접 쓰는 함수들까지 생겼다. 추가된 함수들은 다음과 같다.
+
+**조회(read) 계열**
+
+- `get_design_context`
+    - 선택 레이어의 디자인 컨텍스트를 React + Tailwind 형태로 반환 (구 `get_code`)
+- `get_metadata`
+    - 선택 영역의 레이어 ID·이름·타입·위치·크기만 담은 경량 XML 반환 (먼저 뼈대만 훑고 필요한 부분만 `get_design_context` 호출하는 용도)
+- `get_screenshot`
+    - 선택 요소의 스크린샷 캡쳐 (구 `get_image`)
+- `get_code_connect_suggestions`
+    - Code Connect 매핑 후보를 자동 탐지·제안
+- `get_context_for_code_connect`
+    - Code Connect 템플릿 생성에 필요한 메타데이터 조회
+- `get_figjam`
+    - FigJam 다이어그램을 메타데이터·스크린샷 포함 XML로 변환
+- `get_libraries`
+    - 파일에 추가됐거나 추가 가능한 라이브러리 목록 반환
+- `search_design_system`
+    - 연결된 라이브러리 전체에서 컴포넌트·변수·스타일을 텍스트로 검색
+- `download_assets`
+    - Figma의 export 결과물·원본 이미지 다운로드
+- `whoami`
+    - 현재 인증된 Figma 사용자 확인
+
+**생성·수정(write) 계열**
+
+- `create_new_file`
+    - 빈 Figma Design / FigJam / Slides 파일 생성
+- `use_figma`
+    - Figma 파일에 오브젝트를 생성·수정·삭제·조회하는 범용 쓰기 도구
+- `generate_figma_design`
+    - UI 코드를 Figma 디자인 레이어로 변환 (code → design)
+- `generate_diagram`
+    - Mermaid 문법이나 설명으로 FigJam 다이어그램 생성
+- `upload_assets`
+    - PNG/JPG/GIF/WebP 이미지를 Figma 파일에 업로드
+- `add_code_connect_map`
+    - Figma 노드 ↔ 코드 컴포넌트 매핑 생성
+- `send_code_connect_mappings`
+    - 제안된 Code Connect 매핑을 확정
+
+> 출처: [Figma Developer Docs - Tools and prompts](https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/)
 
 ### 코드를 잘 만들게 하려면
 
